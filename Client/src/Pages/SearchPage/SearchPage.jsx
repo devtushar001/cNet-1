@@ -1,9 +1,12 @@
 import React from "react";
+import './SearchPage.css';
 
 const SearchPage = () => {
    return (
     <>
-     <ul>
+     <ul >
+      <br />
+      <br />
       <li>Capital of america</li>
       <br />
       <li>Chatgpt full course</li>

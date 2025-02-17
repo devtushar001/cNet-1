@@ -10,9 +10,19 @@ const NavbarOption = () => {
             <ul className='menu-item'>
                <Link onClick={() => setNavbar(false)} to={"/"} className='no-style'><li>Home</li></Link>
                <Link onClick={() => setNavbar(false)} to={"/projects"} className='no-style'><li>Projects</li></Link>
+               <Link onClick={() => setNavbar(false)} to={"/hire-me-form"} className='no-style'><li>Hire me</li></Link>
                <Link onClick={() => setNavbar(false)} to={"/blogs"} className='no-style'><li>Blog</li></Link>
                <Link onClick={() => setNavbar(false)} to={"/shop"} className='no-style'> <li>Shop</li></Link>
                <Link onClick={() => setNavbar(false)} to={"/services"} className='no-style'> <li>Services</li></Link>
+               <Link onClick={() => setNavbar(false)} to={"/services"} className='no-style'> <li>About Me</li></Link>
+               <Link onClick={() => setNavbar(false)} to={"/services"} className='no-style'> <li>About Me</li></Link>
+               <Link onClick={() => setNavbar(false)} to={"/services"} className='no-style'> <li>About Me</li></Link>
+               <Link onClick={() => setNavbar(false)} to={"/services"} className='no-style'> <li>About Me</li></Link>
+               <Link onClick={() => setNavbar(false)} to={"/services"} className='no-style'> <li>About Me</li></Link>
+               <Link onClick={() => setNavbar(false)} to={"/services"} className='no-style'> <li>About Me</li></Link>
+               <Link onClick={() => setNavbar(false)} to={"/services"} className='no-style'> <li>About Me</li></Link>
+               <Link onClick={() => setNavbar(false)} to={"/services"} className='no-style'> <li>About Me</li></Link>
+               <Link onClick={() => setNavbar(false)} to={"/services"} className='no-style'> <li>About Me</li></Link>
             </ul>
          </div>
 

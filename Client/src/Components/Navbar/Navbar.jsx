@@ -22,7 +22,7 @@ const Navbar = () => {
           </div>
           {!navbar ?
             <>
-              <img src={imageData.search_icon} alt="Search Icon" />
+             <Link to='/search-querry'><img src={imageData.search_icon} alt="Search Icon" /></Link> 
               <Link to='/contact-us'> <img src={imageData.location_icon} alt="Location Icon" /></Link>
             </>
             : ""}

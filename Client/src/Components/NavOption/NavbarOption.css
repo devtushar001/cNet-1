@@ -1,4 +1,5 @@
 .navbar-option {
+    width: 100vw;
     background-color: rgba(219, 219, 219, 0.597);
     backdrop-filter: blur(15px);
     position: fixed;
@@ -20,9 +21,9 @@
 .navbar-option .menu-item {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
     font-size: 23px;
-    width: 45%;
     margin-left: 45px;
 }
 
@@ -48,7 +49,7 @@
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
     .navbar-option .menu-item {
-        width: 60%;
+        width: 100%;
         margin-left: 20px;
     }
 }

@@ -1,0 +1,7 @@
+ul li {
+    margin-left: 12px;
+    list-style: none;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    cursor: pointer;
+}
+

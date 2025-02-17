@@ -15,6 +15,7 @@ import ForgotPassword from './Pages/ForgotPassword/ForgotPassword';
 import { ToastContainer } from 'react-toastify';
 import { EscomContext } from './Context/escomContext';
 import NavbarOption from './Components/NavOption/NavbarOption';
+import SearchBar from './Components/SearchBar/SearchBar';
 
 function App() {
   const { navbar, setNavbar } = useContext(EscomContext);
@@ -33,6 +34,7 @@ function App() {
         <Route path='/login-signup' element={<LoginSignup />} />
         <Route path='/user-profile' element={<UserProfile />} />
         <Route path='/forgot-password' element={<ForgotPassword />} />
+        <Route path='/search-querry' element={<SearchBar />} />
       </Routes>
       <Footer />
     </>

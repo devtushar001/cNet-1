@@ -21,9 +21,6 @@ const Home = () => {
         <div className="slider">
           <Slider />
         </div>
-        <SearchBar />
-        {/* <Loading/> */}
-        <ToolsIcon renderOne={lastSixItems} renderTwo={itemsFromFiveToNine} />
       </div>
     </>
   )
