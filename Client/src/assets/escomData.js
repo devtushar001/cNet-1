@@ -53,6 +53,7 @@ import ImageUploader from '../Components/Projects/ImageUploder';
 import image_upload_icon from './image-upload.png';
 import text_editor_icon from './content-creator.png'
 import TextEditor from '../Components/Projects/TextEditor';
+import me from './me.jpeg';
 
 
 export const assets = {
@@ -85,7 +86,8 @@ export const assets = {
   timer_icon,
   voice_search_icon,
   image_upload_icon,
-  text_editor_icon
+  text_editor_icon,
+  me
 };
 
 export const escomData = [

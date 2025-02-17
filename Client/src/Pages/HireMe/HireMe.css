@@ -1,7 +1,59 @@
 .hire-me-container {
     width: 85vw;
-    background: #00345f4b;
     margin: 0px auto 50px auto;
-    border: 1px solid gray;
+    border: 1px solid rgba(105, 161, 207, 0.332);
     padding: 20px;
+}
+
+.hire-me-container .top,
+.hire-me-container .middle {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    padding: 20px;
+}
+
+.hire-me-container .top .left {
+    width: 20%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hire-me-container .top .left img {
+    width: 100%;
+    border: 1px solid rgb(0, 70, 120);
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
+.hire-me-container .top .right {
+    padding: 40px;
+    width: 80%;
+}
+
+
+
+.hire-me-container .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+}
+
+.hire-me-container .bottom input,
+.hire-me-container .bottom button {
+    height: 32px;
+    padding: 0 12px;
+
+}
+
+.hire-me-container .bottom textarea {
+    height: 230px;
+}
+
+.hire-me-container .bottom button {
+    cursor: pointer;
 }
