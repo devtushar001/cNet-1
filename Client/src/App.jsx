@@ -17,6 +17,8 @@ import { EscomContext } from './Context/escomContext';
 import NavbarOption from './Components/NavOption/NavbarOption';
 import SearchBar from './Components/SearchBar/SearchBar';
 import Courses from './Pages/Courses/Courses';
+import ShowCourse from './Components/ShowCourse/ShowCourse';
+import HireMe from './Pages/HireMe/HireMe';
 
 function App() {
   const { navbar, setNavbar } = useContext(EscomContext);
@@ -27,7 +29,8 @@ function App() {
       <ToastContainer />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path='/courses' element={<Courses/>} />
+        <Route path='/courses' element={<Courses />} />
+        <Route path='/courses/:courseId' element={<ShowCourse />} />
         <Route path='/projects' element={<ToolsView />} />
         <Route path="/projects/:toolsId" element={<Tools />} />
         <Route path='/about-us' element={<AboutUs />} />
@@ -37,6 +40,7 @@ function App() {
         <Route path='/user-profile' element={<UserProfile />} />
         <Route path='/forgot-password' element={<ForgotPassword />} />
         <Route path='/search-querry' element={<SearchBar />} />
+        <Route path='/hire-me' element={<HireMe/>} />
       </Routes>
       <Footer />
     </>

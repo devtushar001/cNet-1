@@ -1,5 +1,6 @@
 import React from "react";
 import './Courses.css';
+import CourseCategory from "../../Components/CourseCategory/CourseCategory";
 
 const Courses = () => {
     return (
@@ -7,7 +8,7 @@ const Courses = () => {
             <div className="courses">
             </div>
             <div className="content">
-                
+                <CourseCategory/>
             </div>
         </>
     )

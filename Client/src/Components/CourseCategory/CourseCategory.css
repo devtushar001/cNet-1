@@ -1,0 +1,38 @@
+.course-category {
+    width: 75vw;
+    margin: 0 auto 30px auto;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+}
+
+.course-category .single-course {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #0044923f;
+}
+
+.course-category .single-course img {
+    width: 100%;
+}
+
+.course-category .single-course p {
+    position: absolute;
+    z-index: 22;
+    bottom: -45px;
+    display: flex;
+    align-items: center;
+    background: #004492;
+    width: 100%;
+    color: #fff;
+    height: 50px;
+    justify-content: center;
+    transition: all ease 0.3s;
+    cursor: pointer;
+}
+
+.course-category .single-course:hover p {
+    bottom: 0;
+}

@@ -1,54 +1,73 @@
 .navbar-option {
     width: 100vw;
-    background-color: rgba(219, 219, 219, 0.597);
-    backdrop-filter: blur(15px);
+    background-color: rgba(219, 219, 219, 0.7);
+    backdrop-filter: blur(10px);
     position: fixed;
-    left: 0px;
+    left: 0;
     right: 0;
-    height: 100vh;
     top: 72px;
+    height: 100vh;
     box-sizing: border-box;
     z-index: 7000;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    padding: 20px 10px;
+    font-family: Arial, sans-serif;
+    padding: 20px;
 }
 
 .no-style {
     text-decoration: none;
     color: rgb(66, 66, 66);
+    transition: color 0.3s ease;
 }
 
-.navbar-option .menu-item {
-    min-height: 320px;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    font-size: 23px;
-    margin-left: 45px;
-    /* gap: 30px; */
-}
 
-.navbar-option .menu-item ul {
-    transition: all ease-in-out 0.4s;
-}
-
-.navbar-option .menu-item ul li {
-    font-size: 18px;
-    display: none;
-    transition: all ease-in-out 0.4s;
-}
-
-.navbar-option .menu-item ul:hover li {
-    display: block;
-}
-
-.navbar-option .menu-item li {
-    margin-right: 20px;
+.menu-item {
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
     list-style: none;
-    cursor: pointer;
-    transition: all ease-in-out 0.4s;
+    padding: 0;
 }
 
-.navbar-option .menu-item li:hover {
+.menu-item li {
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.menu-item li:hover {
+    transform: translateY(-2px);
     color: rgb(0, 72, 135);
-    transform: translateX(-3px);
+}
+
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.315);
+    border: 1px solid rgb(233, 233, 233);
+    min-width: 200px;
+    display: none;
+    flex-wrap: wrap;
+    width: 640px;
+    padding: 10px 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
+.dropdown-menu li {
+    padding: 10px 15px;
+    font-size: 17px;
+    white-space: nowrap;
+}
+
+.dropdown-menu li:hover {
+    background-color: rgba(0, 95, 40, 0.308);
 }
