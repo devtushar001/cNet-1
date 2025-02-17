@@ -1,0 +1,63 @@
+.rock-paper-scissor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 40px;
+  gap: 30px;
+}
+
+.rock-paper-scissor .user-input {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  height: 35px;
+  border: 1px solid rgb(174, 174, 174);
+  padding: 30px;
+  color: rgb(218, 65, 0);
+}
+
+.rock-paper-scissor .user-input .active {
+  background-color: rgba(0, 55, 92, 0);
+  border: 1px solid #013d7d;
+  color: #013d7d;
+  animation: moveUpDown 0.2s ease-in-out infinite; /* Smooth infinite transition */
+}
+
+.rock-paper-scissor .reset {
+  display: grid;
+  background-color: rebeccapurple;
+  height: 35px;
+  cursor: pointer;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: rotate(0px); /* Starting position */
+  }
+  50% {
+    transform: rotate(3deg); /* Move down */
+  }
+  100% {
+    transform: rotate(0px); /* Back to starting position */
+  }
+}
+
+
+.rock-paper-scissor .user-input button {
+  cursor: pointer;
+}
+
+.rock-paper-scissor .result {
+  padding: 30px;
+  border: 1px solid rgb(179, 179, 179);
+}
+
+.rock-paper-scissor .result .result-count {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 5px;
+}
+
+.rock-paper-scissor .result .result-count span {
+  border: 1px solid rgb(186, 186, 186);
+  padding: 5px 10px;
+}

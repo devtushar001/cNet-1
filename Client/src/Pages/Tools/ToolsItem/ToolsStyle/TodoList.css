@@ -1,0 +1,52 @@
+.todo-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 30px;
+  gap: 30px;
+}
+
+.todo-list .todo-input,
+.todo-list .todo-output {
+  border: 1px solid rgb(214, 209, 209);
+  padding: 30px;
+}
+
+.todo-list .todo-output .out-comes {
+  display: grid;
+  grid-template-columns: 1fr 70px;
+  gap: 5px;
+  border-bottom: 1px solid rgb(212, 212, 212);
+  margin-top: 6px;
+}
+
+.todo-list .todo-output .out-comes p {
+  margin-top: 5px;
+  margin-left: 4px;
+}
+
+.todo-list .todo-output .out-comes button {
+   border: none;
+   background-color: rgb(177, 1, 1);
+   color: #cacaca;
+   cursor: pointer;
+
+}
+
+.todo-list .todo-input {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  gap: 4px;
+  height: 35px;
+
+}
+
+.todo-list .todo-input input {
+  padding-left: 10px;
+  border: none;
+  border-bottom: 1px solid rgb(190, 189, 189);
+  outline-color: rgb(0, 108, 224);
+}
+
+.todo-list .todo-input button {
+  cursor: pointer;
+}

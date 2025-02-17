@@ -1,0 +1,44 @@
+/* src/Whiteboard.css */
+.whiteboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+.controls {
+  /* position: absolute; */
+  /* background-color: rosybrown; */
+  border: 1px solid #bebebe;
+  padding: 30px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.whiteboard-container button {
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.whiteboard-container button:hover {
+  background-color: #ddd;
+}
+
+canvas {
+  border: 1px solid rgb(154, 154, 154);
+  cursor: crosshair;
+}
+
+.canvas-container {
+  margin-top: 20px;
+}
+
+#cnsss {
+  width: 100vw;
+  height: 100vh;
+}

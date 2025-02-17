@@ -1,0 +1,45 @@
+.home {
+  min-height: 80vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 70px;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.home .slider {
+  margin-bottom: 90px;
+  height: 40vh;
+  width: 90vw;
+  background: transparent;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .home .slider {
+    margin-top: 100px;
+    margin-bottom: 70px;
+    height: 35vh; /* Slightly reduce height for medium screens */
+    width: 95vw; /* Increase width utilization */
+  }
+}
+
+@media (max-width: 768px) {
+  .home .slider {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    height: 30vh; /* Reduce height for smaller screens */
+    width: 95vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .home .slider {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    height: 25vh; /* Further reduce height for mobile devices */
+    width: 100%; /* Utilize full screen width */
+  }
+}

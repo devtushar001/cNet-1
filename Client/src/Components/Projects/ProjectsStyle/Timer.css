@@ -1,0 +1,70 @@
+.timer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.timer .clock {
+  width: 500px;
+  height: 500px;
+  background: rgb(255, 255, 255);
+  position: relative;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.timer .clock .clock_center {
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  z-index: 4500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.timer .clock .clock_center .hour {
+  width: 190px;
+  height:  190px;
+  transform: rotate(85deg);
+}
+
+.timer .clock .clock_center .minute {
+  transform: rotate(160deg);
+  width: 240px;
+  background-color: rebeccapurple;
+  height: 140px;
+}
+
+.timer .clock .clock_center .second {
+  transform: rotate(60deg);
+  width: 340px;
+  height: 340px;
+}
+
+.timer .clock .clock_center .hour .hrs {
+  background-color: rgb(255, 106, 0);
+  width: 10px;
+  height: 50%;
+
+}
+
+.timer .clock .clock_center .hour .mints {
+  background-color: rgb(0, 68, 146);
+  /* width: 8px;
+  height: 50%; */
+}
+
+.timer .clock .clock_center .hour .secs {
+  background-color: yellow;
+  width: 50%;
+  height: 50%;
+
+}

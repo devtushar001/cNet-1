@@ -1,0 +1,30 @@
+.reverse-string {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.reverse-string .input-strings,
+.reverse-string .result {
+  border: 1px solid rgb(221, 221, 221);
+  padding: 40px;
+}
+
+.reverse-string .input-strings {
+  display: grid;
+  grid-template-columns: 0.7fr 0.2fr;
+  height: 35px;
+}
+
+.reverse-string .input-strings input {
+  /* outline:none; */
+  outline-color: rgb(0, 119, 255);
+  border: none;
+  border-bottom: 1px solid rgb(180, 180, 180);
+  padding-left: 10px;
+}
+
+.reverse-string .input-strings button {
+  cursor: pointer;
+}

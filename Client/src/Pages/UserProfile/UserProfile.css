@@ -1,0 +1,34 @@
+.user-prfl {
+  margin: 100px 100px 50px 100px;
+  border: 1px solid rgb(188, 188, 188);
+  padding: 50px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.user-prfl  .user-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.user-prfl .user-info #edit-details {
+  position: absolute;
+  bottom:   -29px;
+  right: 0;
+  cursor: pointer;
+  padding: 7px 15px;
+  border: 1px solid goldenrod;
+  background-color: #fff;
+  color: goldenrod;
+  transition: all 0.3s;
+}
+
+.user-prfl .user-info #edit-details:hover {
+  background-color: goldenrod;
+  color: #fff;
+}
+
+.user-prfl .user-info img {
+  width: 70px;
+}

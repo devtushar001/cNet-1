@@ -1,0 +1,57 @@
+/* Container styles for the GenerateColor component */
+.generate-color {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Two columns: Input area and output area */
+  gap: 10px; /* Spacing between columns */
+  padding: 30px; /* Padding around the container */
+}
+
+/* Styles for the input section */
+.generate-color .color-input {
+  border: 1px solid gray; /* Border around the input section */
+  padding: 30px; /* Internal padding */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  /* border-radius: 10px; Rounded corners for a polished look */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; /* Subtle shadow for better aesthetics */
+}
+
+/* Styles for the color picker input */
+.generate-color .color-input input {
+  width: 100%; /* Full width input */
+  height: 340px; /* Tall color picker for better visibility */
+  outline: none; /* Remove default focus outline */
+  border: none; /* No border */
+  border-radius: 5px; /* Slightly rounded corners */
+  cursor: pointer; /* Pointer cursor to indicate interactivity */
+}
+
+/* Styles for the button */
+.generate-color .color-input button {
+  height: 37px; /* Button height */
+  margin-top: 30px; /* Space between input and button */
+  color: white; /* White text color */
+  background: #0085eb; /* Blue background color */
+  border: none; /* Remove border */
+  cursor: pointer; /* Pointer cursor */
+  /* border-radius: 5px; Rounded corners */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; /* Button shadow */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the button */
+.generate-color .color-input button:hover {
+  background: #006bb5; /* Darker blue on hover */
+}
+
+/* Styles for the output section */
+.generate-color .color-output input {
+  width: 100%; /* Full width for the inputs */
+  height: 37px; /* Consistent height */
+  margin-bottom: 10px; /* Spacing between inputs */
+  padding: 5px; /* Inner padding */
+  outline: none; /* Remove default focus outline */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  background: #f9f9f9; /* Light gray background */
+}

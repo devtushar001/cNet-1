@@ -1,0 +1,143 @@
+#tools-item {
+  padding: 20px;
+  z-index: 1;
+  color: #454545;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+hr {
+  margin-top: 13px;
+  margin-bottom: 13px;
+}
+
+#tools-item #tools-info .tools-details {
+  width: 65%;
+}
+
+#tools-item #tools-info .tools-details h1 {
+  font-size: 85px;
+  color: rgb(0, 77, 141);
+}
+
+#tools-item #tools-info .tools-details .buttons {
+  width: 50%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: 35px;
+  gap: 5px;
+}
+
+#tools-item #tools-info .tools-details .buttons button {
+  cursor: pointer;
+}
+
+#tools-info {
+  background: #ffffff;
+  padding: 40px;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+
+#tools-item #tools-info .clock-container {
+  width: 25%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4px;
+}
+
+#tools-item #tools-info .clock-container .clock {
+  background-color: #f2f2f2;
+}
+
+#active {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 90000;
+  min-height: 130vh;
+  height: auto;
+  background: rgb(250, 255, 255);
+}
+
+.tools-display {
+  border: 1px solid rgb(197, 197, 197);
+}
+
+.tools-display #btns {
+  padding: 7px 30px;
+  color: #fff;
+  background-color: rgb(0, 94, 134);
+  border: none;
+  cursor: pointer;
+  border-bottom-right-radius: 50px;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  #tools-item #tools-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #tools-item #tools-info .tools-details {
+    width: 100%;
+  }
+
+  #tools-item #tools-info .tools-details h1 {
+    font-size: 65px;
+  }
+
+  #tools-item #tools-info .tools-details .buttons {
+    width: 100%;
+    grid-template-columns: 1fr; /* Stack buttons vertically */
+    height: auto;
+    gap: 10px;
+  }
+
+  #tools-item #tools-info .clock-container {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  #tools-item {
+    padding: 15px;
+  }
+
+  #tools-item #tools-info .tools-details h1 {
+    font-size: 50px;
+  }
+
+  #tools-item #tools-info .clock-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #tools-item #tools-info .tools-details h1 {
+    font-size: 40px;
+  }
+
+  #tools-item #tools-info .tools-details .buttons {
+    gap: 8px;
+  }
+
+  #tools-item #tools-info .clock-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .tools-display #btns {
+    padding: 7px 20px;
+    font-size: 14px;
+  }
+}

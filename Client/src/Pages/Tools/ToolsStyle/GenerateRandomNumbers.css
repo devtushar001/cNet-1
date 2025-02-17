@@ -1,0 +1,21 @@
+.generate-random-number {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 40px;
+}
+
+.generate-random-number .random-btn,
+.generate-random-number .show-result {
+  border: 1px solid rgb(208, 208, 208);
+  padding: 40px;
+}
+
+.generate-random-number .random-btn button {
+  padding: 7px 30px;
+  cursor: pointer;
+}
+.generate-random-number .show-result input {
+  padding: 7px 7px;
+}

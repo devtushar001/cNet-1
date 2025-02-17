@@ -1,0 +1,25 @@
+.tools-list {
+  width: 37%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link {
+  width: 37%;
+  display: flex;
+  align-items: center;
+}
+
+.link a {
+  margin-right: 12px;
+}
+
+.tools-list .tools {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: gray;
+  cursor: pointer;
+  margin: 12px;
+}

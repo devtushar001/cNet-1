@@ -1,0 +1,43 @@
+.loading {
+  width: 300px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: moove 1s ease-in-out 0 infinite;
+}
+
+@keyframes moove {
+  0% {
+    border-radius: 0%;
+  }
+
+100% {
+  border-radius: 50%;
+}
+}
+
+.loading #i {
+  width: 25%;
+  height: 100%;
+  background: linear-gradient(90deg, rgb(203, 0, 0), rgb(9, 109, 0));
+}
+
+.loading #r {
+  background: linear-gradient(90deg,  rgb(9, 109, 0), rgb(0, 26, 171));
+
+  width: 25%;
+  height: 100%;
+}
+
+.loading #o {
+  background: linear-gradient(90deg, rgb(0, 26, 171), darkorange);
+  width: 25%;
+  height: 100%;
+}
+
+.loading #c {
+  background: linear-gradient(90deg, darkorange, rgb(203, 0, 0));
+  width: 25%;
+  height: 100%;
+}

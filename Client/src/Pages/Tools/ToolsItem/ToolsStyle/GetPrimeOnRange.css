@@ -1,0 +1,54 @@
+.get-prime-on-range {
+  padding: 60px 20px;
+}
+
+.get-prime-on-range .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.get-prime-on-range .container .inputs {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid rgb(199, 199, 199);
+  margin-top: 30px;
+  height: 150px;
+}
+
+.get-prime-on-range .container .inputs input {
+  height: 35px;
+  margin-top: 10px;
+  padding: 0px 10px;
+  border: 1px solid rgb(0, 103, 154);
+  outline-color: rgb(0, 93, 180);
+  border-radius: 14px;
+}
+
+.get-prime-on-range .container .inputs button {
+  margin-top: 10px;
+  height: 35px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(0, 18, 27);
+  color: #fff;
+}
+
+.get-prime-on-range .container .prime-numbers {
+  width: 50%;
+  border: 1px solid rgb(172, 172, 172);
+  padding: 20px;
+}
+
+.get-prime-on-range .container .prime-numbers ul li {
+  list-style: none;
+}
+
+#others-data {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+

@@ -1,0 +1,68 @@
+.voice-text {
+  display: grid;
+ grid-template-columns: 2fr 1fr;
+ padding: 30px;
+ gap: 30px;
+}
+
+@media (max-width:540px) {
+  .voice-text {
+    grid-template-columns: 1fr;
+
+  }
+}
+
+.voice-text .text-input {
+  border: 1px solid gray;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.voice-text .text-input textarea {
+    width: 100%;
+    border: 1px solid gainsboro;
+    outline-color: cornflowerblue;
+    padding: 10px 5px;
+    height: 140px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.voice-text .text-input button {
+  width: 100%;
+  height: 35px;
+  cursor: pointer;
+  padding: 10px 5px;
+}
+
+
+
+.voice-text .voice-output {
+  border: 1px solid gray;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.voice-output .vibrations {
+  width: 5px;
+  height: 50px;
+  background-color: #4caf50;
+  transition: transform 0.1s ease-in-out;
+  margin-top: 20px;
+}
+
+.voice-output.speaking .vibrations {
+  animation: vibration 0.02s infinite;
+}
+
+@keyframes vibration {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-3px); }
+  50% { transform: translateY(3px); }
+  75% { transform: translateY(-3px); }
+  100% { transform: translateY(3px); }
+}

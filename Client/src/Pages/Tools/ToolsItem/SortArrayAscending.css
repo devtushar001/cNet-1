@@ -1,0 +1,26 @@
+.sort-array-ascending {
+  display: flex;
+  padding: 50px;
+  gap: 30px;
+}
+
+/* .sort-array-ascending .container {
+
+} */
+
+.sort-array-ascending .result,
+.sort-array-ascending .container {
+  border: 1px solid rgb(207, 207, 207);
+  padding: 40px;
+  width: 40%;
+}
+
+.sort-array-ascending .container {
+  display: grid;
+  grid-template-columns: 0.6fr 0.2fr;
+  height: 35px;
+}
+
+.sort-array-ascending .container input {
+  padding-left: 10px;
+}

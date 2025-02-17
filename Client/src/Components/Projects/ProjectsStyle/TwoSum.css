@@ -1,0 +1,47 @@
+.two-sum {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+.two-sum .input-details {
+  border: 1px solid gray;
+  padding: 20px 30px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.two-sum .input-details .choose-methods {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.two-sum .input-details .choose-methods label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.two-sum .input-details label input {
+    cursor: pointer;
+}
+
+.two-sum .input-details  input {
+  height: 35px;
+  padding: 0px 10px;
+}
+
+
+.two-sum .input-details  button {
+  height: 35px;
+  cursor: pointer;
+}
+.two-sum .output {
+  border: 1px solid gray;
+  padding: 20px 30px;
+}

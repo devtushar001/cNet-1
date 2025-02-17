@@ -1,0 +1,31 @@
+.check-palindrome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-palindrome .result {
+  width: 70%;
+  padding: 40px;
+  background-color: aliceblue;
+}
+.check-palindrome .containers {
+  margin-top: 30px;
+  background-color: aliceblue;
+  width: 70%;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 0.6fr 0.2fr;
+  gap: 5px;
+  height: 35px;
+}
+
+.check-palindrome .containers button {
+  cursor: pointer;
+}
+
+.check-palindrome .containers input {
+  padding-left: 10px;
+  outline-color: rgb(0, 195, 255);
+}

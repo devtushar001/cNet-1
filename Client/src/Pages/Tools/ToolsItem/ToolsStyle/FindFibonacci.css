@@ -1,0 +1,36 @@
+.find-fibonacci {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  pad: 20px;
+}
+
+.find-fibonacci .fibonacci-inputs {
+  width: 30%;
+  border: 1px solid gray;
+  padding: 30px;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 0.7fr 0.3fr;
+  gap: 3px;
+}
+
+.find-fibonacci .fibonacci-inputs input {
+  height: 25px;
+  padding: 0px 10px;
+}
+
+.find-fibonacci .fibonacci-inputs #fibonacci-btn {
+  background-color: black;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.find-fibonacci .fibonacci-outputs {
+  width: 50%;
+  border: 1px solid brown;
+  padding: 30px;
+  height: auto;
+}

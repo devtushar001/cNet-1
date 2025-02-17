@@ -1,0 +1,30 @@
+.large-in-array {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 40px;
+}
+
+.large-in-array .input-fields,
+.large-in-array .result {
+  padding: 40px;
+  border: 1px solid gray;
+}
+
+.large-in-array .input-fields {
+  display: grid;
+  height: 35px;
+  gap: 4px;
+  grid-template-columns: 1fr 100px;
+}
+
+.large-in-array .input-fields input {
+  padding-left: 10px;
+}
+
+.large-in-array .input-fields button {
+  cursor: pointer;
+}
+ /* {
+  padding: 40px;
+} */

@@ -1,0 +1,108 @@
+.spl-tools-list,
+.spl-tools-list-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.spl-tools-list {
+  width: 640px;
+}
+
+.spl-tools-list-2 {
+  width: 520px;
+}
+
+.spl-tools-list .tools,
+.spl-tools-list-2 .tools {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+  margin-bottom: 20px; /* Add some space between rows */
+}
+
+.spl-tools-list .tools .info,
+.spl-tools-list-2 .tools .info {
+  width: 55px;
+  height: 55px;
+  margin-top: 30px;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgb(0, 136, 215);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+ justify-content: center;
+  cursor: pointer;
+}
+
+.spl-tools-list .tools .info img,
+.spl-tools-list-2 .info img {
+  width: 80%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .spl-tools-list {
+    width: 100%;
+    justify-content: space-evenly;/*  Adjust alignment for medium screens */
+  }
+
+  .spl-tools-list-2 {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .spl-tools-list .tools,
+  .spl-tools-list-2 .tools {
+    width: 30%; /* Allow 3 items per row */
+  }
+
+  .spl-tools-list .tools .info,
+  .spl-tools-list-2 .tools .info {
+    width: 70px;
+    height: 70px; /* Increase size slightly for better visibility */
+  }
+}
+
+@media (max-width: 768px) {
+  .spl-tools-list,
+  .spl-tools-list-2 {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .spl-tools-list .tools,
+  .spl-tools-list-2 .tools {
+    width: 40%; /* Allow 2 items per row */
+  }
+
+  .spl-tools-list .tools .info,
+  .spl-tools-list-2 .tools .info {
+    width: 80px;
+    height: 80px; /* Increase size for better touch targets */
+  }
+}
+
+@media (max-width: 576px) {
+  .spl-tools-list,
+  .spl-tools-list-2 {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .spl-tools-list .tools,
+  .spl-tools-list-2 .tools {
+    width: 80%; /* Stack items vertically */
+    margin-bottom: 15px;
+  }
+
+  .spl-tools-list .tools .info,
+  .spl-tools-list-2 .tools .info {
+    width: 50px;
+    height: 50px; /* Resize icons for small screens */
+  }
+}

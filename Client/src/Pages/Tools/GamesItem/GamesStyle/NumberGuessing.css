@@ -1,0 +1,52 @@
+.number-guess-game {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 40px;
+  gap: 30px;
+}
+
+.number-guess-game .user-input,
+.number-guess-game .result {
+  border: 1px solid rgb(220, 220, 220);
+  padding: 40px;
+}
+
+.number-guess-game .user-input {
+  display: grid;
+  gap: 2px;
+  grid-template-columns:  1fr 100px;
+}
+
+.number-guess-game .user-input input {
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid gray;
+  outline-color: rgb(0, 157, 219);
+}
+
+.number-guess-game .user-input button {
+  cursor: pointer;
+}
+
+.number-guess-game .result{
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  align-content: center;
+  height: 35px;
+}
+
+.number-guess-game .result button {
+  height: 35px;
+  cursor: pointer;
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 40px;
+  background-color: brown;
+  color: #fff;
+  border: 1px solid rgb(215, 215, 215);
+}

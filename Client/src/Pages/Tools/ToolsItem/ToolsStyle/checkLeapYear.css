@@ -1,0 +1,27 @@
+.check-leap-year {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 40px;
+}
+
+.check-leap-year .leap-year-inputs,
+.check-leap-year .leap-year-result {
+   border: 1px solid gray;
+   padding: 40px;
+}
+
+.check-leap-year .leap-year-inputs {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  height: 35px;
+}
+
+.check-leap-year .leap-year-inputs input {
+  padding-left: 10px;
+  outline-color: rgb(0, 61, 192);
+}
+
+.check-leap-year .leap-year-inputs button {
+  cursor: pointer;
+}

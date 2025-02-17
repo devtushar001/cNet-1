@@ -1,0 +1,140 @@
+.footer-container {
+  background-color: rgb(231, 231, 231);
+  padding: 20px;
+  height: auto;
+}
+
+.footer-container p {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  padding: 20px 30px;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.footer .left, .footer .middle, .footer .right {
+  flex: 1; /* Equal width for each section */
+  margin: 10px;
+  min-width: 250px; /* Prevent sections from becoming too narrow */
+}
+
+.footer .left .logo {
+  display: flex;
+  border-bottom: 1px solid #ff5e00;
+  font-size: 40px;
+  flex-wrap: wrap;
+}
+
+.footer .left .social-media {
+  margin-top: 20px;
+  border-radius: 50%;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgb(192, 192, 192);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.footer .left .social-media:hover {
+  background-color: #ff7b00;
+  transform: scale(0.95);
+}
+
+#connection {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footer .left .social-media img {
+  width: 100%;
+}
+
+.footer #tools {
+  color: #6d6d6d;
+  margin-left: 10px;
+  font-size: 24px;
+}
+
+.footer .middle ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer .middle ul li {
+  list-style: none;
+  cursor: pointer;
+  margin: 5px 0;
+  transition: all 0.3s;
+}
+
+.footer .middle ul li:hover {
+  margin-left: 5px;
+  color: #ffa600;
+}
+
+.footer .right span {
+  display: block;
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer .left, .footer .middle, .footer .right {
+    flex: none; /* Remove flex-grow */
+    width: 100%; /* Full width */
+    max-width: none;
+  }
+
+  #connection {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .footer .left .logo {
+    justify-content: center;
+  }
+
+  .footer .middle ul {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container p {
+    font-size: 12px;
+    padding: 5px 0;
+  }
+
+  .footer .left .social-media {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+  }
+
+  .footer .right span {
+    font-size: 12px;
+  }
+}
