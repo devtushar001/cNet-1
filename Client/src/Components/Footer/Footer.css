@@ -2,6 +2,7 @@
   background-color: rgb(231, 231, 231);
   padding: 20px;
   height: auto;
+  z-index: 1000;
 }
 
 .footer-container p {

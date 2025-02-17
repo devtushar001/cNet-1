@@ -3,6 +3,7 @@ import './ToolsView.css';
 import { useContext } from "react";
 import { EscomContext } from "../../Context/escomContext";
 import AllTools from "../../Components/AllTools/AllTools";
+import Slider from "../../Components/Slider/Slider";
 
 const ToolsView = () => {
    const { escomData } = useContext(EscomContext);

@@ -16,6 +16,7 @@ import { ToastContainer } from 'react-toastify';
 import { EscomContext } from './Context/escomContext';
 import NavbarOption from './Components/NavOption/NavbarOption';
 import SearchBar from './Components/SearchBar/SearchBar';
+import Courses from './Pages/Courses/Courses';
 
 function App() {
   const { navbar, setNavbar } = useContext(EscomContext);
@@ -26,6 +27,7 @@ function App() {
       <ToastContainer />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path='/courses' element={<Courses/>} />
         <Route path='/projects' element={<ToolsView />} />
         <Route path="/projects/:toolsId" element={<Tools />} />
         <Route path='/about-us' element={<AboutUs />} />

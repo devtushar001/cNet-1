@@ -9,20 +9,45 @@ const NavbarOption = () => {
          <div className="navbar-option">
             <ul className='menu-item'>
                <Link onClick={() => setNavbar(false)} to={"/"} className='no-style'><li>Home</li></Link>
-               <Link onClick={() => setNavbar(false)} to={"/projects"} className='no-style'><li>Projects</li></Link>
-               <Link onClick={() => setNavbar(false)} to={"/hire-me-form"} className='no-style'><li>Hire me</li></Link>
-               <Link onClick={() => setNavbar(false)} to={"/blogs"} className='no-style'><li>Blog</li></Link>
-               <Link onClick={() => setNavbar(false)} to={"/shop"} className='no-style'> <li>Shop</li></Link>
-               <Link onClick={() => setNavbar(false)} to={"/services"} className='no-style'> <li>Services</li></Link>
-               <Link onClick={() => setNavbar(false)} to={"/services"} className='no-style'> <li>About Me</li></Link>
-               <Link onClick={() => setNavbar(false)} to={"/services"} className='no-style'> <li>About Me</li></Link>
-               <Link onClick={() => setNavbar(false)} to={"/services"} className='no-style'> <li>About Me</li></Link>
-               <Link onClick={() => setNavbar(false)} to={"/services"} className='no-style'> <li>About Me</li></Link>
-               <Link onClick={() => setNavbar(false)} to={"/services"} className='no-style'> <li>About Me</li></Link>
-               <Link onClick={() => setNavbar(false)} to={"/services"} className='no-style'> <li>About Me</li></Link>
-               <Link onClick={() => setNavbar(false)} to={"/services"} className='no-style'> <li>About Me</li></Link>
-               <Link onClick={() => setNavbar(false)} to={"/services"} className='no-style'> <li>About Me</li></Link>
-               <Link onClick={() => setNavbar(false)} to={"/services"} className='no-style'> <li>About Me</li></Link>
+               <Link onClick={() => setNavbar(false)} to={"/"} className='no-style'>
+                  <Link onClick={() => setNavbar(false)} to={"/courses"} className='no-style'> <ul>Courses
+                     <li>HTML</li>
+                     <li>CSS</li>
+                     <li>JavaScript</li>
+                     <li>Bootstrap</li>
+                     <li>Tailwin</li>
+                     <li>Node</li>
+                     <li>Express</li>
+                     <li>MongoDB</li>
+                     <li>MongoDB</li>
+                  </ul>
+                  </Link>
+               </Link>
+               <Link onClick={() => setNavbar(false)} to={"/"} className='no-style'>
+                  <ul>Blogs
+                     <li>Technology</li>
+                     <li>Courses</li>
+                     <li>Courses</li>
+                  </ul>
+               </Link>
+               <Link onClick={() => setNavbar(false)} to={"/"} className='no-style'>
+                  <ul>Shop
+                     <li>Course One</li>
+                     <li>Course two</li>
+                  </ul>
+               </Link>
+               <Link onClick={() => setNavbar(false)} to={"/"} className='no-style'>
+                  <ul>Videos
+                  </ul>
+               </Link>
+               <Link onClick={() => setNavbar(false)} to={"/"} className='no-style'>
+                  <ul>Hire me
+                  </ul>
+               </Link>
+               <Link onClick={() => setNavbar(false)} to={"/"} className='no-style'>
+                  <ul>About me
+                  </ul>
+               </Link>
             </ul>
          </div>
 
