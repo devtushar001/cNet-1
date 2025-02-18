@@ -19,8 +19,12 @@ const Shops = () => {
         {productData.map((data) => {
           return (
             <div key={data._id} className="single-product">
-                 <img src={data.featuredImg} alt="" />
-                 <p>{data.title}</p>
+              <img src={data.featuredImg} alt="" />
+              <p>{data.title}</p>
+              <div className="btns">
+                <button className="view">View</button>
+                <button className="purchase">Purchase</button>
+              </div>
             </div>
           )
         })}

@@ -76,3 +76,36 @@
     bottom: 30px;
     right: 30px;
 }
+
+.all-products .single-product .btns {
+    position: absolute;
+    top: 0;
+    right: -57px;
+    bottom: 0;
+    height: 60%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    transition: all ease-in-out 0.3s;
+}
+
+.all-products .single-product:hover .btns {
+    right: 0;
+}
+
+.all-products .single-product .btns button {
+    margin-top: 2px;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    background: rgb(0, 98, 38);
+    padding: 0 4px;
+}
+
+.all-products .single-product .btns .view {
+    background: #ff4800;
+}
+
+.all-products .single-product .btns .purchase {
+    background: #ffb300;
+    color: #001e57;
+}
