@@ -54,6 +54,7 @@ import image_upload_icon from './image-upload.png';
 import text_editor_icon from './content-creator.png'
 import TextEditor from '../Components/Projects/TextEditor';
 import me from './me.jpeg';
+import me_one from './me-one.jpg';
 
 
 export const assets = {
@@ -87,7 +88,8 @@ export const assets = {
   voice_search_icon,
   image_upload_icon,
   text_editor_icon,
-  me
+  me,
+  me_one
 };
 
 export const escomData = [
@@ -303,8 +305,8 @@ export const courseCategory = [
 // Programming
 
 export const blogsCategory = [
-  {_id: 1, name: 'Technology', img: app_store_icon},
-  {_id: 1, name: 'Courses', img: app_store_icon},
-  {_id: 1, name: 'Programming', img: app_store_icon},
-  {_id: 1, name: 'Others', img: app_store_icon}
+  { _id: 1, name: 'Technology', img: app_store_icon },
+  { _id: 2, name: 'Courses', img: app_store_icon },
+  { _id: 3, name: 'Programming', img: app_store_icon },
+  { _id: 4, name: 'Others', img: app_store_icon }
 ]

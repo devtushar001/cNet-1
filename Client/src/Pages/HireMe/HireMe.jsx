@@ -13,15 +13,28 @@ const HireMe = () => {
                     </div>
                     <div className="right">
                         <section class="hire-me">
-                            <h1>Hire Me!</h1>
-                            <p>Hey there! </p>
-                            I’m Tushar Chaudhary, a passionate Full-Stack Developer specializing in the MERN stack (MongoDB, Express.js, React, Node.js). I also have expertise in PHP and various other frameworks and libraries.
-
-                            If you're looking for a skilled developer to build or optimize your project, I’m here to help! Whether it’s web development, API integration, or troubleshooting issues, I can deliver high-quality solutions at an affordable price.
-
-                            Let’s work together! Contact me today. <p> Contact me today. </p>
+                            <h1>Hire Me</h1>
+                            <br />
+                            <p>Hey there!,</p>
+                            <br />
+                            <p>
+                                I am <strong>Tushar Chaudhary</strong>, a dedicated <strong>Full-Stack Developer</strong> with expertise in the
+                                <strong> MERN stack</strong> (MongoDB, Express.js, React, Node.js). <br /> I also have experience in <strong> PHP </strong>
+                                and various other frameworks and libraries.
+                            </p>
+                            <br />
+                            <p>
+                                Whether you need a modern web application, API integration, or a reliable solution to complex development challenges,
+                                I am here to provide high-quality services tailored to your needs.
+                            </p>
+                            <br />
+                            <p>
+                                Let’s collaborate and build something exceptional. <strong>Get in touch today!</strong>
+                            </p>
+                            <br />
                             <a href="mailto:dev.mrtushar01@gmail.com" class="hire-btn">Hire Me</a>
                         </section>
+
                     </div>
                 </div>
                 <div className="middle">

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './NavbarOption.css';
 import { EscomContext } from '../../Context/escomContext';
-import { courseCategory, escomData } from '../../assets/escomData';
+import { assets, blogsCategory, courseCategory, escomData } from '../../assets/escomData';
 
 const NavbarOption = () => {
    const { setNavbar } = useContext(EscomContext);
@@ -26,14 +26,19 @@ const NavbarOption = () => {
             </li>
 
             <li className="dropdown">
-               <span><Link to='/blogs' className="no-style">Blogs</Link> </span>
+               <span><Link to='/blogs' onClick={() => setNavbar(false)} className="no-style">Blogs</Link> </span>
                <ul className="dropdown-menu">
-                  <li>Technology</li>
-                  <li>Courses</li>
-                  <li>Programming</li>
+                  {blogsCategory.map((blogCat) => {
+                     return (
+                        <li key={blogCat._id}>
+                           <Link onClick={() => setNavbar(false)} to={`/blogs/${blogCat._id}`} className="no-style">
+                              {blogCat.name}
+                           </Link>
+                        </li>
+                     )
+                  })}
                </ul>
             </li>
-
             <li className="dropdown">
                <span>Shop</span>
                <ul className="dropdown-menu">
@@ -48,10 +53,10 @@ const NavbarOption = () => {
                   {escomData.map((item, i) => {
                      return (
                         <li key={item._id}>
-                        <Link onClick={() => setNavbar(false)} to={`/projects/${item._id}`} className="no-style">
-                           {item.name}
-                        </Link>
-                     </li>
+                           <Link onClick={() => setNavbar(false)} to={`/projects/${item._id}`} className="no-style">
+                              {item.name}
+                           </Link>
+                        </li>
                      )
                   })}
                </ul>

@@ -19,6 +19,8 @@ import SearchBar from './Components/SearchBar/SearchBar';
 import Courses from './Pages/Courses/Courses';
 import ShowCourse from './Components/ShowCourse/ShowCourse';
 import HireMe from './Pages/HireMe/HireMe';
+import Blogs from './Pages/Blogs/Blogs';
+import ShowBlogs from './Components/ShowBlogs/ShowBlogs';
 
 function App() {
   const { navbar, setNavbar } = useContext(EscomContext);
@@ -31,6 +33,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path='/courses' element={<Courses />} />
         <Route path='/courses/:courseId' element={<ShowCourse />} />
+        <Route path='/blogs/' element={<Blogs/>} />
+        <Route path='/blogs/:blogsId' element={<ShowBlogs/>} />
         <Route path='/projects' element={<ToolsView />} />
         <Route path="/projects/:toolsId" element={<Tools />} />
         <Route path='/about-us' element={<AboutUs />} />
