@@ -313,3 +313,86 @@ export const shopCategory = [
   { _id: 3, name: 'Single page tools', img: app_store_icon },
   { _id: 4, name: 'universal', img: app_store_icon }
 ]
+
+export const blogData = [
+  {
+    _id: 1,
+    feturedImg: "https://plus.unsplash.com/premium_photo-1679177184014-16746957e4cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    galleryImg: [],
+    title: "The Future of AI in Technology",
+    category: "Technology",
+    author: "John Doe",
+    content: "Artificial Intelligence (AI) is rapidly transforming various industries...",
+    createdAt: "2025-02-18T10:00:00Z"
+  },
+  {
+    _id: 2,
+    feturedImg: "https://plus.unsplash.com/premium_photo-1683134105531-42032fc66937?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    galleryImg: [],
+    title: "Top 5 Web Development Courses in 2025",
+    category: "Courses",
+    author: "Jane Smith",
+    content: "Web development is a booming field. Here are the top 5 courses...",
+    createdAt: "2025-02-18T11:00:00Z"
+  },
+  {
+    _id: 3,
+    feturedImg: "https://plus.unsplash.com/premium_photo-1673480195911-3075a87738b0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    galleryImg: [],
+    title: "Understanding JavaScript Closures",
+    category: "Programming",
+    author: "Alice Johnson",
+    content: "JavaScript closures are an important concept to master...",
+    createdAt: "2025-02-18T12:00:00Z"
+  },
+  {
+    _id: 4,
+    feturedImg: "https://images.unsplash.com/photo-1624555130581-1d9cca783bc0?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    galleryImg: [],
+    title: "The Impact of Social Media on Society",
+    category: "Others",
+    author: "Robert Brown",
+    content: "Social media has changed the way we communicate...",
+    createdAt: "2025-02-18T13:00:00Z"
+  },
+  {
+    _id: 5,
+    feturedImg: "https://plus.unsplash.com/premium_photo-1683865776032-07bf70b0add1?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    galleryImg: [],
+    title: "Cloud Computing: The Next Big Thing",
+    category: "Technology",
+    author: "Emily White",
+    content: "Cloud computing is revolutionizing businesses...",
+    createdAt: "2025-02-18T14:00:00Z"
+  },
+  {
+    _id: 6,
+    feturedImg: "https://images.unsplash.com/photo-1587691592099-24045742c181?q=80&w=1473&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    galleryImg: [],
+    title: "Best Data Science Courses for Beginners",
+    category: "Courses",
+    author: "David Lee",
+    content: "Data science is an in-demand skill. These courses can help...",
+    createdAt: "2025-02-18T15:00:00Z"
+  },
+  {
+    _id: 7,
+    feturedImg: "https://images.unsplash.com/photo-1517404215738-15263e9f9178?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    galleryImg: [],
+    title: "How to Build a REST API with Node.js",
+    category: "Programming",
+    author: "Michael Green",
+    content: "Creating a RESTful API using Node.js is simpler than you think...",
+    createdAt: "2025-02-18T16:00:00Z"
+  },
+  {
+    _id: 8,
+    feturedImg: "https://plus.unsplash.com/premium_photo-1725356401065-b12922e64ee4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    galleryImg: [],
+    title: "Mental Health and Productivity",
+    category: "Others",
+    author: "Sophia Wilson",
+    content: "Maintaining good mental health is crucial for productivity...",
+    createdAt: "2025-02-18T17:00:00Z"
+  }
+];

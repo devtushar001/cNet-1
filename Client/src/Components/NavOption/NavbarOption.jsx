@@ -55,7 +55,7 @@ const NavbarOption = () => {
             </li>
 
             <li className="dropdown">
-               <span>Projects</span>
+               <Link onClick={() => setNavbar(false)} to='/projects' className='no-style'><span>Projects</span></Link>
                <ul className="dropdown-menu">
                   {escomData.map((item, i) => {
                      return (
