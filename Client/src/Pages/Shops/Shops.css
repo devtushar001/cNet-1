@@ -1,0 +1,78 @@
+.shops {
+    position: relative;
+    height: 640px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    top: -48px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.shops h1 {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    font-size: 100px;
+    color: rgb(182, 182, 182);
+}
+
+.shops .read-more {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    padding: 20px 50px;
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    background: rgb(0, 132, 81);
+    color: #fff;
+}
+
+.shops .over-lap {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.431));
+    backdrop-filter: blur(0.3px);
+}
+
+.all-products {
+    display: flex;
+    flex-wrap: wrap;
+    width: 85vw;
+    gap: 12px;
+    margin: 30px auto;
+}
+
+.all-products .single-product {
+    width: 350px;
+    overflow: hidden;
+    height: 420px;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+.all-products .single-product:hover {
+    transform: translate(1.2px);
+}
+
+.all-products .single-product img {
+    height: 100%;
+}
+
+.all-products .single-product p {
+    background: #07010137;
+    backdrop-filter: blur(15px);
+    color: #fff;
+    font-size: 17px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4px 12px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
