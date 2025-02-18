@@ -21,6 +21,8 @@ import ShowCourse from './Components/ShowCourse/ShowCourse';
 import HireMe from './Pages/HireMe/HireMe';
 import Blogs from './Pages/Blogs/Blogs';
 import ShowBlogs from './Components/ShowBlogs/ShowBlogs';
+import Shops from './Pages/Shops/Shops';
+import ShowShop from './Components/ShowShop/ShowShop';
 
 function App() {
   const { navbar, setNavbar } = useContext(EscomContext);
@@ -33,18 +35,20 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path='/courses' element={<Courses />} />
         <Route path='/courses/:courseId' element={<ShowCourse />} />
-        <Route path='/blogs/' element={<Blogs/>} />
-        <Route path='/blogs/:blogsId' element={<ShowBlogs/>} />
+        <Route path='/blogs' element={<Blogs />} />
+        <Route path='/blogs/:blogsId' element={<ShowBlogs />} />
+        <Route path='/shops' element={<Shops />} />
+        <Route path='/shops/:shopId' element={<ShowShop />} />
         <Route path='/projects' element={<ToolsView />} />
         <Route path="/projects/:toolsId" element={<Tools />} />
-        <Route path='/about-us' element={<AboutUs />} />
-        <Route path='/contact-us' element={<ContactUs />} />
-        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         <Route path='/login-signup' element={<LoginSignup />} />
         <Route path='/user-profile' element={<UserProfile />} />
         <Route path='/forgot-password' element={<ForgotPassword />} />
+        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         <Route path='/search-querry' element={<SearchBar />} />
-        <Route path='/hire-me' element={<HireMe/>} />
+        <Route path='/about-us' element={<AboutUs />} />
+        <Route path='/contact-us' element={<ContactUs />} />
+        <Route path='/hire-me' element={<HireMe />} />
       </Routes>
       <Footer />
     </>
