@@ -298,3 +298,13 @@ export const courseCategory = [
   { _id: 25, name: 'AWS', img: app_icon }
 ];
 
+// Technology
+// Courses
+// Programming
+
+export const blogsCategory = [
+  {_id: 1, name: 'Technology', img: app_store_icon},
+  {_id: 1, name: 'Courses', img: app_store_icon},
+  {_id: 1, name: 'Programming', img: app_store_icon},
+  {_id: 1, name: 'Others', img: app_store_icon}
+]

@@ -26,7 +26,7 @@ const NavbarOption = () => {
             </li>
 
             <li className="dropdown">
-               <span>Blogs</span>
+               <span><Link to='/blogs' className="no-style">Blogs</Link> </span>
                <ul className="dropdown-menu">
                   <li>Technology</li>
                   <li>Courses</li>

@@ -3,6 +3,7 @@
     margin: 0px auto 50px auto;
     border: 1px solid rgba(105, 161, 207, 0.332);
     padding: 20px;
+    color: rgb(72, 72, 72);
 }
 
 .hire-me-container .top,
@@ -34,7 +35,24 @@
     width: 80%;
 }
 
+.hire-me-container .middle .left {
+    width: 20%;
+    padding: 20px;
+}
 
+.hire-me-container .middle .right {
+    width: 80%;
+    padding: 20px;
+}
+
+.hire-me-container .middle .right .skills-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    border: 1px solid rgb(222, 222, 222);
+    padding: 20px;
+    flex-wrap: wrap;
+}
 
 .hire-me-container .bottom {
     display: flex;
