@@ -12,9 +12,9 @@ const Blogs = () => {
 
    const relatedBlogs = blogData.filter((data) => {
       if (blogCat === "All") {
-         return true; // Return all blogs
+         return true;
       }
-      return data.category === blogCat; // Return blogs matching the category
+      return data.category === blogCat;
    });
 
    const latestBlog = relatedBlogs.length > 0 ? relatedBlogs[relatedBlogs.length - 1] : null;
