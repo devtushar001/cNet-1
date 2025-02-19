@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { productData } from "../../assets/escomData";
-import './ShowShop.css';
+import "./ShowShop.css";
 import { EscomContext } from "../../Context/escomContext";
 
 const ShowShop = () => {
@@ -10,11 +10,17 @@ const ShowShop = () => {
 
     useEffect(() => {
         console.log(cartData);
-    }, []);
-
+    }, [cartData]); // Ensure it updates when cartData changes
 
     const singleProduct = productData.find((data) => Number(data._id) === Number(shopId));
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    if (!singleProduct) {
+        return <h2 className="error-message">Product not found!</h2>;
+    }
 
     const readableDate = new Date(singleProduct.createdAt).toLocaleString("en-IN", {
         weekday: "long",
@@ -24,16 +30,12 @@ const ShowShop = () => {
         hour: "2-digit",
         minute: "2-digit",
         second: "2-digit",
-        hour12: true
+        hour12: true,
     });
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
 
-    // If product not found, show a message
-    if (!singleProduct) {
-        return <h2 className="error-message">Product not found!</h2>;
-    }
+    // Get product quantity in cart
+    const cartItem = cartData.find((item) => item.productId === singleProduct._id);
+    const cartQuantity = cartItem?.quantity || 0;
 
     return (
         <div className="show-shop-product">
@@ -53,19 +55,29 @@ const ShowShop = () => {
                 <p>Category: {singleProduct?.category}</p>
                 <p>Brand: {singleProduct?.brand}</p>
                 <br />
+                <span>Available Stock: {singleProduct.stock}</span>
                 <h2> &#8377; {singleProduct?.price}</h2>
+
                 <div className="quantity">
-                    <div onClick={() => removeFromCart(singleProduct._id)}>-</div>
-                    <div>
-                        {
-                            cartData.find((item) => item.productId === singleProduct._id)?.quantity || 0
-                        }
+                    {cartQuantity > 0 && <div onClick={() => removeFromCart(singleProduct._id)}>-</div>}
+
+                    <div>{cartQuantity}</div>
+
+                    <div
+                        onClick={() => addToCart(singleProduct._id)}
+                        style={{ pointerEvents: cartQuantity >= singleProduct.stock ? "none" : "auto", opacity: cartQuantity >= singleProduct.stock ? 0.2 : 1 }} >
+                        +
                     </div>
-                    <div onClick={() => addToCart(singleProduct._id)}>+</div>
                 </div>
+
                 <div className="buttons">
-                    <button>Add to cart</button>
-                    <button>Purchase</button>
+                    <button
+                        onClick={() => addToCart(singleProduct._id)}
+                        style={{ pointerEvents: cartQuantity >= singleProduct.stock ? "none" : "auto", opacity: cartQuantity >= singleProduct.stock ? 0.2 : 1 }}
+                    >
+                        Add to cart
+                    </button>
+                    <button style={{ opacity: cartQuantity === 0 ? 0.2 : 1 }} disabled={cartQuantity === 0} > Purchase </button>
                 </div>
             </div>
         </div>

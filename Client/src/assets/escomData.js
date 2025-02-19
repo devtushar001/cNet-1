@@ -405,6 +405,7 @@ export const productData = [
     title: "Wireless Noise-Canceling Headphones",
     category: "Electronics",
     brand: "Sony",
+    stock: 14,
     price: 299.99,
     description: "Experience premium sound quality with advanced noise cancellation.",
     createdAt: "2025-02-18T10:00:00Z"
@@ -416,6 +417,7 @@ export const productData = [
     title: "E-commerce Website Template",
     category: "Websites",
     brand: "Custom",
+    stock: 17,
     price: 99.99,
     description: "A fully responsive e-commerce website template built with React and Tailwind CSS.",
     createdAt: "2025-02-18T11:00:00Z"
@@ -427,6 +429,7 @@ export const productData = [
     title: "QR Code Generator",
     category: "Single Page Tools",
     brand: "Utility",
+    stock: 23,
     price: "Free",
     description: "Generate QR codes instantly with our easy-to-use online tool.",
     createdAt: "2025-02-18T12:00:00Z"
@@ -438,6 +441,7 @@ export const productData = [
     title: "Universal Laptop Stand",
     category: "Universal",
     brand: "ErgoTech",
+    stock: 17,
     price: 49.99,
     description: "An adjustable and portable laptop stand suitable for all laptop sizes.",
     createdAt: "2025-02-18T13:00:00Z"
@@ -449,6 +453,7 @@ export const productData = [
     title: "Smartwatch with Health Tracking",
     category: "Electronics",
     brand: "FitBit",
+    stock: 13,
     price: 199.99,
     description: "Track your health and fitness with this advanced smartwatch.",
     createdAt: "2025-02-18T14:00:00Z"
@@ -460,6 +465,7 @@ export const productData = [
     title: "Portfolio Website Template",
     category: "Websites",
     brand: "Custom",
+    stock: 14,
     price: 49.99,
     description: "A sleek and modern portfolio website template for developers and designers.",
     createdAt: "2025-02-18T15:00:00Z"
@@ -471,6 +477,7 @@ export const productData = [
     title: "Online JSON Formatter",
     category: "Single Page Tools",
     brand: "Utility",
+    stock: 10,
     price: "Free",
     description: "Format and validate JSON data with this simple online tool.",
     createdAt: "2025-02-18T16:00:00Z"
@@ -482,6 +489,7 @@ export const productData = [
     title: "Universal Wireless Charging Pad",
     category: "Universal",
     brand: "TechZone",
+    stock: 5,
     price: 39.99,
     description: "Charge multiple devices wirelessly with this universal charging pad.",
     createdAt: "2025-02-18T17:00:00Z"
