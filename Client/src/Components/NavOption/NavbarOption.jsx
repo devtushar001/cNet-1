@@ -1,11 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './NavbarOption.css';
 import { EscomContext } from '../../Context/escomContext';
 import { assets, blogsCategory, courseCategory, escomData, shopCategory } from '../../assets/escomData';
 
 const NavbarOption = () => {
-   const { setNavbar } = useContext(EscomContext);
+   const { setNavbar,
+      blogCat,
+      setBlogCat,
+      courseCat,
+      setCourseCat,
+      shopCat,
+      setShopCat } = useContext(EscomContext);
+
+   useEffect(() => {
+      console.log(blogCat);
+   }, [blogCat]);
 
    return (
       <div className="navbar-option">
@@ -26,16 +36,23 @@ const NavbarOption = () => {
             </li>
 
             <li className="dropdown">
-               <span><Link to='/blogs' onClick={() => setNavbar(false)} className="no-style">Blogs</Link> </span>
+               <span><Link to='/blogs' onClick={() => { setNavbar(false); setBlogCat('All') }} className="no-style">Blogs</Link> </span>
                <ul className="dropdown-menu">
                   {blogsCategory.map((blogCat) => {
                      return (
                         <li key={blogCat._id}>
-                           <Link onClick={() => setNavbar(false)} to={`/blogs/${blogCat._id}`} className="no-style">
+                           <Link
+                              onClick={(e) => {
+                                 setNavbar(false);
+                                 setBlogCat(blogCat.name); // Use blogCat.name instead of e.target.value
+                              }}
+                              to={`/blogs`}
+                              className="no-style"
+                           >
                               {blogCat.name}
                            </Link>
                         </li>
-                     )
+                     );
                   })}
                </ul>
             </li>

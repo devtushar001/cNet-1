@@ -1,0 +1,9 @@
+.single-blog-data {
+    width: 75vw;
+    margin: 0 auto 45px auto;
+    overflow: hidden;
+}
+
+.single-blog-data img {
+    width: 100%;
+}

@@ -14,6 +14,17 @@ const EscomContextProvider = ({ children }) => {
   const [searchPage, setSearchPage] = useState(false);
   const [getValue, setGetValue] = useState([]);
 
+  // category setup for all routes
+  const [courseCat, setCourseCat] = useState('All');
+  const [blogCat, setBlogCat] = useState('All');
+  const [shopCat, setShopCat] = useState('All');
+
+  useEffect(() => {
+    console.log(courseCat);
+    console.log(blogCat);
+    console.log(shopCat);
+  }, []);
+
   const backend_url = "https://cnet-backend.onrender.com";
 
   // Function to fetch data from the database
@@ -84,7 +95,13 @@ const EscomContextProvider = ({ children }) => {
     deleteContent,
     getFetchData,
     navbar,
-    setNavbar
+    setNavbar,
+    blogCat,
+    setBlogCat,
+    courseCat,
+    setCourseCat,
+    shopCat,
+    setShopCat
   };
 
   return (
