@@ -9,15 +9,15 @@ const ShowBlogs = () => {
   const showBlogData = blogData.find((data) => Number(data._id) === Number(blogsId));
 
   const readableDate = new Date(showBlogData.createdAt).toLocaleString("en-IN", {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "2-digit",
+    weekday: "long",  
+    year: "numeric",  
+    month: "long",    
+    day: "numeric",   
+    hour: "2-digit",  
     minute: "2-digit",
-    hour12: true
-  });
-
+    second: "2-digit",
+    hour12: true      
+});
 
 
   useEffect(() => {
