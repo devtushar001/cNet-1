@@ -1,24 +1,30 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { productData } from "../../assets/escomData";
 import './ShowShop.css';
+import { EscomContext } from "../../Context/escomContext";
 
 const ShowShop = () => {
     const { shopId } = useParams();
+    const { addToCart, removeFromCart, cartData } = useContext(EscomContext);
 
-    // Find the product safely
+    useEffect(() => {
+        console.log(cartData);
+    }, []);
+
+
     const singleProduct = productData.find((data) => Number(data._id) === Number(shopId));
 
 
     const readableDate = new Date(singleProduct.createdAt).toLocaleString("en-IN", {
-        weekday: "long",  
-        year: "numeric",  
-        month: "long",    
-        day: "numeric",   
-        hour: "2-digit",  
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
         minute: "2-digit",
         second: "2-digit",
-        hour12: true      
+        hour12: true
     });
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -49,7 +55,13 @@ const ShowShop = () => {
                 <br />
                 <h2> &#8377; {singleProduct?.price}</h2>
                 <div className="quantity">
-                <div>-</div><div>0</div><div>+</div>
+                    <div onClick={() => removeFromCart(singleProduct._id)}>-</div>
+                    <div>
+                        {
+                            cartData.find((item) => item.productId === singleProduct._id)?.quantity || 0
+                        }
+                    </div>
+                    <div onClick={() => addToCart(singleProduct._id)}>+</div>
                 </div>
                 <div className="buttons">
                     <button>Add to cart</button>

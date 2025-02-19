@@ -13,6 +13,7 @@ const EscomContextProvider = ({ children }) => {
   const [sideBar, setSideBar] = useState(false); // To show all tools in the sidebar
   const [searchPage, setSearchPage] = useState(false);
   const [getValue, setGetValue] = useState([]);
+  const [cartData, setCartData] = useState([]);
 
   // category setup for all routes
   const [courseCat, setCourseCat] = useState('All');
@@ -27,7 +28,6 @@ const EscomContextProvider = ({ children }) => {
 
   const backend_url = "https://cnet-backend.onrender.com";
 
-  // Function to fetch data from the database
   const getFetchData = async () => {
     try {
       const response = await fetch(`${backend_url}/api/text-edit/get`, {
@@ -38,13 +38,12 @@ const EscomContextProvider = ({ children }) => {
       });
 
       const data = await response.json();
-      setGetValue(data);  // Set fetched data in state
+      setGetValue(data); 
     } catch (error) {
       alert("Failed to fetch data");
     }
   };
 
-  // Function to delete content from the database
   const deleteContent = async (id) => {
     try {
       const response = await fetch(`${backend_url}/api/text-edit/delete`, {
@@ -58,7 +57,6 @@ const EscomContextProvider = ({ children }) => {
       const data = await response.json();
       getFetchData();
       if (data.success) {
-        // Remove deleted content from UI
         toast.success(data.message);
         setGetValue(getValue.filter(content => content._id !== id));
         getFetchData();
@@ -68,6 +66,35 @@ const EscomContextProvider = ({ children }) => {
     } catch (error) {
       alert("Failed to delete content");
     }
+  };
+
+
+  const addToCart = (productId) => {
+    setCartData((prevCart) => {
+      const existingItem = prevCart.find((item) => item.productId === productId);
+
+      if (existingItem) {
+        return prevCart.map((item) =>
+          item.productId === productId ? { ...item, quantity: item.quantity + 1 } : item
+        );
+      } else {
+        return [...prevCart, { productId, quantity: 1 }];
+      }
+    });
+  };
+
+  const removeFromCart = (productId) => {
+    setCartData((prevCart) => {
+      const existingItem = prevCart.find((item) => item.productId === productId);
+
+      if (existingItem && existingItem.quantity > 1) {
+        return prevCart.map((item) =>
+          item.productId === productId ? { ...item, quantity: item.quantity - 1 } : item
+        );
+      } else {
+        return prevCart.filter((item) => item.productId !== productId);
+      }
+    });
   };
 
 
@@ -101,7 +128,10 @@ const EscomContextProvider = ({ children }) => {
     courseCat,
     setCourseCat,
     shopCat,
-    setShopCat
+    setShopCat,
+    addToCart,
+    removeFromCart,
+    cartData
   };
 
   return (
