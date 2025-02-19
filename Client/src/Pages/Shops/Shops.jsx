@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import './Shops.css';
 import { productData } from "../../assets/escomData";
 import { Link } from "react-router-dom";
+import { EscomContext } from "../../Context/escomContext";
 
 const Shops = () => {
-  const latestProduct = productData.length > 0 ? productData[productData.length - 1] : null;
+  const { shopCat } = useContext(EscomContext);
+
+  const relatedProduct = productData.filter((data) => {
+    if (shopCat === 'All') {
+      return true;
+    }
+    return shopCat === data.category;
+  })
+
+  const latestProduct = relatedProduct.length > 0 ? relatedProduct[relatedProduct.length - 1] : null;
+
 
   return (
     <>
@@ -16,13 +27,13 @@ const Shops = () => {
       </div>
 
       <div className="all-products">
-        {productData.map((data) => {
+        {relatedProduct.map((data) => {
           return (
             <div key={data._id} className="single-product">
               <img src={data.featuredImg} alt="" />
               <p>{data.title}</p>
               <div className="btns">
-                <button className="view">View</button>
+                <Link className="no-style view" to={`/shops/${data._id}`}><button className="view"> View</button></Link>
                 <button className="purchase">Purchase</button>
               </div>
             </div>

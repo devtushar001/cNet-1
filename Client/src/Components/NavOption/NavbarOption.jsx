@@ -44,11 +44,10 @@ const NavbarOption = () => {
                            <Link
                               onClick={(e) => {
                                  setNavbar(false);
-                                 setBlogCat(blogCat.name); // Use blogCat.name instead of e.target.value
+                                 setBlogCat(blogCat.name);
                               }}
                               to={`/blogs`}
-                              className="no-style"
-                           >
+                              className="no-style">
                               {blogCat.name}
                            </Link>
                         </li>
@@ -57,12 +56,12 @@ const NavbarOption = () => {
                </ul>
             </li>
             <li className="dropdown">
-               <span><Link to='/shops' onClick={() => setNavbar(false)} className="no-style">Shop</Link> </span>
+               <span><Link to='/shops' onClick={() => { setNavbar(false); setShopCat('All') }} className="no-style">Shop</Link> </span>
                <ul className="dropdown-menu">
                   {shopCategory.map((shopCatg) => {
                      return (
                         <li key={shopCatg._id}>
-                           <Link onClick={() => setNavbar(false)} to={`/shops/${shopCatg._id}`} className="no-style">
+                           <Link onClick={() => { setNavbar(false); setShopCat(shopCatg.name) }} to={`/shops`} className="no-style">
                               {shopCatg.name}
                            </Link>
                         </li>

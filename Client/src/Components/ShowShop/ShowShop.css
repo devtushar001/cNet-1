@@ -1,0 +1,128 @@
+.show-shop-product {
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Adds spacing between elements */
+    padding: 20px;
+}
+
+/* Left container (Images) */
+.show-shop-product .left-cont {
+    width: 45%;
+    max-width: 500px;
+    overflow: hidden;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Product Main Image */
+.show-shop-product .left-cont img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Gallery Images */
+.show-shop-product .left-cont .gallery-image {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.show-shop-product .left-cont .gallery-image img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-image img:hover {
+    transform: scale(1.1);
+}
+
+/* Right container (Details) */
+.show-shop-product .right-cont {
+    width: 50%;
+    max-width: 600px;
+}
+
+.show-shop-product .right-cont .buttons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    height: 35px;
+}
+
+.show-shop-product .right-cont .buttons button {
+    cursor: pointer;
+}
+
+.show-shop-product .right-cont .quantity {
+    display: flex;
+    margin: 12px 0;
+    align-items: center;
+    gap: 2px;
+}
+
+.show-shop-product .right-cont .quantity div {
+    width: 102px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: rgb(75, 75, 75);
+    border: 1px solid rgb(200, 200, 200);
+}
+
+.show-shop-product .right-cont h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.show-shop-product .right-cont span {
+    font-size: 14px;
+    color: #666;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.show-shop-product .right-cont p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .show-shop-product {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .show-shop-product .left-cont {
+        width: 90%;
+        max-width: 100%;
+    }
+
+    .show-shop-product .right-cont {
+        width: 90%;
+    }
+
+    .gallery-image img {
+        width: 60px;
+        height: 60px;
+    }
+}

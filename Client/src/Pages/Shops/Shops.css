@@ -102,6 +102,9 @@
 }
 
 .all-products .single-product .btns .view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: #ff4800;
 }
 

@@ -310,8 +310,8 @@ export const blogsCategory = [
 export const shopCategory = [
   { _id: 1, name: 'Electronics', img: app_store_icon },
   { _id: 2, name: 'Websites', img: app_store_icon },
-  { _id: 3, name: 'Single page tools', img: app_store_icon },
-  { _id: 4, name: 'universal', img: app_store_icon }
+  { _id: 3, name: 'Single Page Tools', img: app_store_icon },
+  { _id: 4, name: 'Universal', img: app_store_icon }
 ]
 
 export const blogData = [
@@ -467,7 +467,7 @@ export const productData = [
   {
     _id: 7,
     featuredImg: "https://eternitech.com/wp-content/plugins/eternitech-addons/assets/img/how-to-use-infographics-6.png",
-    galleryImg: [],
+    galleryImg: ["https://cdn.pixabay.com/photo/2023/08/30/12/37/leaves-8223213_960_720.jpg", "https://cdn.pixabay.com/photo/2021/09/07/11/05/ocean-6603616_1280.jpg"],
     title: "Online JSON Formatter",
     category: "Single Page Tools",
     brand: "Utility",
@@ -478,7 +478,7 @@ export const productData = [
   {
     _id: 8,
     featuredImg: "https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    galleryImg: [],
+    galleryImg: ["https://plus.unsplash.com/premium_photo-1669324357471-e33e71e3f3d8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "https://images.unsplash.com/photo-1605496036006-fa36378ca4ab?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "https://plus.unsplash.com/premium_photo-1681506669115-cb6b2d30dbc7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
     title: "Universal Wireless Charging Pad",
     category: "Universal",
     brand: "TechZone",
