@@ -24,6 +24,7 @@ import ShowBlogs from './Components/ShowBlogs/ShowBlogs';
 import Shops from './Pages/Shops/Shops';
 import ShowShop from './Components/ShowShop/ShowShop';
 import Videos from './Pages/Videos/Videos';
+import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
 
 function App() {
   const { navbar, setNavbar } = useContext(EscomContext);
@@ -42,6 +43,7 @@ function App() {
         <Route path='/shops/:shopId' element={<ShowShop />} />
         <Route path='/projects' element={<ToolsView />} />
         <Route path="/projects/:toolsId" element={<Tools />} />
+        <Route path='/place-order' element={<PlaceOrder/>} />
         <Route path='/videos' element={<Videos />} />
         <Route path='/login-signup' element={<LoginSignup />} />
         <Route path='/user-profile' element={<UserProfile />} />

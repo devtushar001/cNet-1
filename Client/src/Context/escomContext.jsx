@@ -38,7 +38,7 @@ const EscomContextProvider = ({ children }) => {
       });
 
       const data = await response.json();
-      setGetValue(data); 
+      setGetValue(data);
     } catch (error) {
       alert("Failed to fetch data");
     }

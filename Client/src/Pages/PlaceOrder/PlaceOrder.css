@@ -1,0 +1,70 @@
+.place-order {
+    width: 85vw;
+    margin: 0 auto 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.place-order .left-container,
+.place-order .right-container {
+    width: 40%;
+    padding: 20px;
+}
+
+
+
+.place-order .left-container .user-data {
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    gap: 10px;
+}
+
+.place-order .left-container .user-data input {
+    width: 97%;
+    height: 25px;
+    outline-color: darkgreen;
+    padding-left: 12px;
+}
+
+.place-order .left-container .user-data .input {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.place-order .left-container .user-data .input input {
+    height: 25px;
+    padding-left: 12px;
+}
+
+.place-order .right-container {
+    overflow: hidden;
+}
+
+.place-order .right-container .cart-item {
+    display: flex;
+    gap: 10px;
+}
+
+.place-order .right-container .cart-item img {
+    width: 200px;
+    margin-top: 10px;
+}
+
+.place-order .right-container .cart-item .cart-item-details {
+    padding: 17px;
+}
+
+.place-order .item-info {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.place-order .item-info div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background: #f76300; */
+}

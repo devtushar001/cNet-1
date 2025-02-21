@@ -1,16 +1,18 @@
 import React, { useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { productData } from "../../assets/escomData";
 import "./ShowShop.css";
 import { EscomContext } from "../../Context/escomContext";
+import { toast } from "react-toastify";
 
 const ShowShop = () => {
     const { shopId } = useParams();
     const { addToCart, removeFromCart, cartData } = useContext(EscomContext);
+    const navigate = useNavigate();
 
     useEffect(() => {
         console.log(cartData);
-    }, [cartData]); // Ensure it updates when cartData changes
+    }, [cartData]);
 
     const singleProduct = productData.find((data) => Number(data._id) === Number(shopId));
 
@@ -36,12 +38,22 @@ const ShowShop = () => {
     // Get product quantity in cart
     const cartItem = cartData.find((item) => item.productId === singleProduct._id);
     const cartQuantity = cartItem?.quantity || 0;
+    const isOutOfStock = cartQuantity >= singleProduct.stock;
+
+    const handlePurchase = (productId) => {
+        const findProduct = cartData.find((data) => data.productId === productId);
+
+        if (!findProduct) {
+            toast.error("Please add product first");
+            return;
+        }
+        navigate("/place-order");
+    };
 
     return (
         <div className="show-shop-product">
             <div className="left-cont">
                 <img src={singleProduct?.featuredImg} alt={singleProduct?.title || "Product Image"} />
-
                 <div className="gallery-image">
                     {singleProduct?.galleryImg?.map((single_img, i) => (
                         <img key={i} src={single_img} alt={`Gallery ${i}`} />
@@ -56,16 +68,22 @@ const ShowShop = () => {
                 <p>Brand: {singleProduct?.brand}</p>
                 <br />
                 <span>Available Stock: {singleProduct.stock}</span>
-                <h2> &#8377; {singleProduct?.price}</h2>
+                <h2>&#8377; {singleProduct?.price}</h2>
 
                 <div className="quantity">
-                    {cartQuantity > 0 && <div onClick={() => removeFromCart(singleProduct._id)}>-</div>}
+                    {cartQuantity > 0 && (
+                        <div onClick={() => removeFromCart(singleProduct._id)}>-</div>
+                    )}
 
                     <div>{cartQuantity}</div>
 
                     <div
                         onClick={() => addToCart(singleProduct._id)}
-                        style={{ pointerEvents: cartQuantity >= singleProduct.stock ? "none" : "auto", opacity: cartQuantity >= singleProduct.stock ? 0.2 : 1 }} >
+                        style={{
+                            pointerEvents: isOutOfStock ? "none" : "auto",
+                            opacity: isOutOfStock ? 0.2 : 1,
+                        }}
+                    >
                         +
                     </div>
                 </div>
@@ -73,11 +91,20 @@ const ShowShop = () => {
                 <div className="buttons">
                     <button
                         onClick={() => addToCart(singleProduct._id)}
-                        style={{ pointerEvents: cartQuantity >= singleProduct.stock ? "none" : "auto", opacity: cartQuantity >= singleProduct.stock ? 0.2 : 1 }}
+                        style={{
+                            pointerEvents: isOutOfStock ? "none" : "auto",
+                            opacity: isOutOfStock ? 0.2 : 1,
+                        }}
                     >
                         Add to cart
                     </button>
-                    <button style={{ opacity: cartQuantity === 0 ? 0.2 : 1 }} disabled={cartQuantity === 0} > Purchase </button>
+                    <button
+                        onClick={() => handlePurchase(singleProduct._id)}
+                        style={{ opacity: cartQuantity === 0 ? 0.2 : 1 }}
+                        disabled={cartQuantity === 0}
+                    >
+                        Purchase
+                    </button>
                 </div>
             </div>
         </div>
