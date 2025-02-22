@@ -101,18 +101,15 @@
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
-/* Logo */
 .navbar .right img {
   height: 50px;
   cursor: pointer;
 }
 
-/* Hover effect for icons */
 .navbar .left img:hover {
   transform: translateY(-2px);
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
   .navbar {
       height: 65px;

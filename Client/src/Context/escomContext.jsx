@@ -15,10 +15,11 @@ const EscomContextProvider = ({ children }) => {
   const [getValue, setGetValue] = useState([]);
   const [cartData, setCartData] = useState([]);
 
-  // category setup for all routes
   const [courseCat, setCourseCat] = useState('All');
   const [blogCat, setBlogCat] = useState('All');
   const [shopCat, setShopCat] = useState('All');
+
+  const getToken = localStorage.getItem('token');
 
   useEffect(() => {
     console.log(courseCat);
@@ -135,7 +136,8 @@ const EscomContextProvider = ({ children }) => {
     setShopCat,
     addToCart,
     removeFromCart,
-    cartData
+    cartData,
+    getToken
   };
 
   return (
