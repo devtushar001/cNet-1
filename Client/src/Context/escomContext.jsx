@@ -107,6 +107,10 @@ const EscomContextProvider = ({ children }) => {
     getFetchData();
   }, []);
 
+  useEffect(() => {
+      console.log(cartData);
+  },[])
+
 
   const contextValue = {
     data,
