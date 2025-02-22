@@ -18,11 +18,11 @@ export const registerController = async (req, res) => {
     const token = user.generateToken();
     user.password = undefined;
 
-    res.cookie("token", token, {
-      expires: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000), // 15 days
-      secure: process.env.NODE_ENV === "production", // Secure only in production
-      httpOnly: true, // Always true for security
-      sameSite: process.env.NODE_ENV === "production" ? "Strict" : "Lax", // Strict in production
+    return res.cookie("token", token, {
+      expires: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000),
+      secure: process.env.NODE_ENV === "production",
+      httpOnly: true,
+      sameSite: process.env.NODE_ENV === "production" ? "Strict" : "Lax",
     }).status(201).json({
       success: true,
       message: "User registered successfully",
@@ -30,7 +30,6 @@ export const registerController = async (req, res) => {
       user,
     });
   } catch (error) {
-    console.error("Error in registerController:", error);
     return res.status(500).json({ success: false, message: "Internal Server Error" });
   }
 };
