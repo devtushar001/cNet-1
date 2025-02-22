@@ -15,7 +15,6 @@ const LoginSignup = () => {
   });
   const { backend_url } = useContext(EscomContext);
 
-  // Validate user input
   function validateUser() {
     if (signUp && userData.password !== userData.confirmPassword) {
       alert(`Hello ${userData.name}, please check your confirm password.`);

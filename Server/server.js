@@ -14,7 +14,6 @@ import textEditorRouter from './Router/textEditorRoutes.js';
 
 dotenv.config();
 
-// Validate environment variables
 const port = process.env.PORT;
 const mongo_url = process.env.MONGODB_URL;
 const cloudName = process.env.CLOUDINARY_CLOUD_NAME;
@@ -27,29 +26,22 @@ if (!port || !mongo_url) {
 
 const app = express();
 
-// Middleware
 app.use(cors());
-app.use(helmet()); // Secure HTTP headers
+app.use(helmet()); 
 app.use(express.json());
 app.use(cookieParser());
 
-// app.use(cors({
-//   origin: ['https://cnet.onrender.com', 'https://cnet.onrender.com'],
-//   credentials: true, // Allow cookies
-// }));
 app.use(rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // Limit each IP to 100 requests per window
+  windowMs: 15 * 60 * 1000, 
+  max: 100, 
 }));
 
 
 
 
-// Database connection
 connectDB(mongo_url);
 cloudinarySetup(cloudName, cloudApiKey, cloudApiSecret)
 
-// Routes
 app.use('/api/user', userRouter);
 app.use('/api/crud', crudRouter);
 app.use('/api/razorpay', razorPayRouter);

@@ -26,7 +26,7 @@ const EscomContextProvider = ({ children }) => {
     console.log(shopCat);
   }, []);
 
-  const backend_url = "https://cnet-backend.onrender.com";
+  const backend_url = "http://localhost:10017";
 
   const getFetchData = async () => {
     try {
