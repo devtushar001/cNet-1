@@ -19,7 +19,9 @@ const EscomContextProvider = ({ children }) => {
   const [blogCat, setBlogCat] = useState('All');
   const [shopCat, setShopCat] = useState('All');
 
-  const getToken = localStorage.getItem('token');
+  const getUser = localStorage.getItem('user');
+
+  const user = JSON.parse(getUser);
 
   useEffect(() => {
     console.log(courseCat);
@@ -137,7 +139,7 @@ const EscomContextProvider = ({ children }) => {
     addToCart,
     removeFromCart,
     cartData,
-    getToken
+    user
   };
 
   return (

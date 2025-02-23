@@ -14,6 +14,7 @@ const LoginSignup = () => {
     confirmPassword: '',
   });
   const { backend_url } = useContext(EscomContext);
+  console.log(backend_url);
 
   function validateUser() {
     if (signUp && userData.password !== userData.confirmPassword) {
@@ -23,11 +24,10 @@ const LoginSignup = () => {
     return true;
   }
 
-  // Handle user registration
   async function userRegister() {
     try {
       if (!validateUser()) {
-        return; // Stop execution if validation fails
+        return;
       }
 
       const response = await fetch(`${backend_url}/api/user/register`, {
@@ -49,9 +49,10 @@ const LoginSignup = () => {
         alert(jsonResponse.message);
         return;
       }
-      console.log(jsonResponse);
-      console.log(document.cookie); // Outputs all cookies
-      navigate('/user-profile')
+      localStorage.setItem('token', JSON.stringify(jsonResponse.token));
+      localStorage.setItem('user', JSON.stringify(jsonResponse.user));
+      console.log(document.cookie);
+      window.location.href = "/user-profile";
       setUserData({
         name: '',
         email: '',
@@ -59,7 +60,6 @@ const LoginSignup = () => {
         password: '',
         confirmPassword: '',
       });
-      // navigate('/user-profile')
 
     } catch (error) {
       alert('An error occurred. Please try again later.');
@@ -79,14 +79,11 @@ const LoginSignup = () => {
         </button>
       </div>
       <div className="right">
-        {/* <h1>Welcome User!!!</h1> */}
         {signUp && (
           <input value={userData.name} onChange={(e) => setUserData((prev) => ({ ...prev, name: e.target.value }))} placeholder="Enter your full name" type="text" />
         )}
         <input value={userData.email} onChange={(e) => setUserData((prev) => ({ ...prev, email: e.target.value }))} placeholder="Enter your email" type="email" />
-        {/* {signUp && (
-          <input value={userData.contact} onChange={(e) => setUserData((prev) => ({ ...prev, contact: e.target.value }))} placeholder="Enter your contact number" type="tel" />
-        )} */}
+
         <input value={userData.password} onChange={(e) => setUserData((prev) => ({ ...prev, password: e.target.value }))} placeholder={signUp ? "Create password." : "Enter Password."} type="password" />
         {signUp && (
           <input value={userData.confirmPassword} onChange={(e) => setUserData((prev) => ({ ...prev, confirmPassword: e.target.value }))} placeholder="Confirm password" type="password" />

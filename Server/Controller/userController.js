@@ -18,17 +18,21 @@ export const registerController = async (req, res) => {
     const token = user.generateToken();
     user.password = undefined;
 
-    return res.cookie("token", token, {
-      expires: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000),
-      secure: process.env.NODE_ENV === "production",
-      httpOnly: true,
-      sameSite: process.env.NODE_ENV === "production" ? "Strict" : "Lax",
-    }).status(201).json({
-      success: true,
-      message: "User registered successfully",
-      token,
-      user,
-    });
+    return res
+      .cookie("token", token, {
+        expires: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000),
+        secure: process.env.NODE_ENV === "production",
+        httpOnly: true,
+        sameSite: process.env.NODE_ENV === "production" ? "Strict" : "Lax",
+      })
+      .status(201)
+      .json({
+        success: true,
+        message: "User registered successfully",
+        user,
+        token
+      });
+
   } catch (error) {
     return res.status(500).json({ success: false, message: "Internal Server Error" });
   }
@@ -41,6 +45,7 @@ export const loginController = async (req, res) => {
 }
 
 export const getUserProfile = async (req, res) => {
+  console.log(req.body);
   const user = req.user;
   user.password = undefined;
 

@@ -1,5 +1,5 @@
 .user-prfl {
-  margin: 100px 100px 50px 100px;
+  margin: 0 100px 50px 100px;
   border: 1px solid rgb(188, 188, 188);
   padding: 50px;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -31,4 +31,12 @@
 
 .user-prfl .user-info img {
   width: 70px;
+}
+
+.user-prfl .user-info button {
+  padding: 7px 20px;
+  border-radius: 20px;
+  border: 1px solid rgb(0, 83, 138);
+  color: rgb(0, 83, 138);
+  cursor: pointer;
 }

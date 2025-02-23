@@ -6,7 +6,7 @@ import { EscomContext } from "../../Context/escomContext";
 import { imageData } from "../../assets/dochakiData";
 
 const Navbar = () => {
-  const { navbar, setNavbar, getToken } = useContext(EscomContext);
+  const { navbar, setNavbar, user } = useContext(EscomContext);
 
   const reloadWebPage = () => {
     window.location.reload()
@@ -22,15 +22,14 @@ const Navbar = () => {
           </div>
           {!navbar ?
             <>
-             <Link to='/search-querry'><img src={imageData.search_icon} alt="Search Icon" /></Link> 
+              <Link to='/search-querry'><img src={imageData.search_icon} alt="Search Icon" /></Link>
               <Link to='/contact-us'> <img src={imageData.location_icon} alt="Location Icon" /></Link>
             </>
             : ""}
         </div>
         <div className="right">
           <img onClick={reloadWebPage} src={assets.cNet} alt="Dochaki Logo" />
-          {!getToken ? <button>Login User</button> : <img  src={assets.user_icon} alt="" />}
-          
+          {!user ? <Link to='/login-signup'><button>Login User</button></Link> :<Link to='user-profile'> <button>Welcom {user.name.slice(0, 5)}...</button></Link>}
         </div>
       </div>
       <div style={{ height: '120px' }} className="conflict-setup">
