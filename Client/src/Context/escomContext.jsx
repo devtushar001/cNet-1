@@ -73,6 +73,10 @@ const EscomContextProvider = ({ children }) => {
 
 
   const addToCart = (productId) => {
+    if (!user) {
+      toast.error("Login First");
+      return;
+    }
     setCartData((prevCart) => {
       const existingItem = prevCart.find((item) => item.productId === productId);
 
@@ -87,6 +91,10 @@ const EscomContextProvider = ({ children }) => {
   };
 
   const removeFromCart = (productId) => {
+    if (!user) {
+      toast.error("Login First");
+      return;
+    }
     setCartData((prevCart) => {
       const existingItem = prevCart.find((item) => item.productId === productId);
 
@@ -111,8 +119,8 @@ const EscomContextProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-      console.log(cartData);
-  },[])
+    console.log(cartData);
+  }, [])
 
 
   const contextValue = {
