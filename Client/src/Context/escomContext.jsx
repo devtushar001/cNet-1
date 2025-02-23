@@ -20,7 +20,7 @@ const EscomContextProvider = ({ children }) => {
   const [shopCat, setShopCat] = useState('All');
 
   const getUser = localStorage.getItem('user');
-  const token = localStorage.getItem('token');
+  const token = JSON.parse(localStorage.getItem('token'));
 
   const user = JSON.parse(getUser);
 

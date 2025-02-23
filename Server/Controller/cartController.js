@@ -1,8 +1,11 @@
 import userModel from "../Models/userModel.js";
 const addToCart = async (req, res) => {
     try {
-        const userId = req.user.id;
-        const { itemId } = req.body;
+        const { productId } = req.body;
+        const userId = req.user._id;
+
+        console.log(productId);
+        console.log(userId);
 
         if (!itemId) {
             return res.status(400).json({

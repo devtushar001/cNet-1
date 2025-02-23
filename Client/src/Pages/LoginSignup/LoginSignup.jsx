@@ -1,68 +1,68 @@
 import React, { useContext, useEffect, useState } from "react";
-import './LoginSignup.css';
+import "./LoginSignup.css";
 import { Link, useNavigate } from "react-router-dom";
 import { EscomContext } from "../../Context/escomContext";
 
 const LoginSignup = () => {
   const [signUp, setSignUp] = useState(true);
   const navigate = useNavigate();
-  const [userData, setUserData] = useState({
-    name: '',
-    email: '',
-    contact: '+91-547-895-48',
-    password: '',
-    confirmPassword: '',
-  });
   const { backend_url } = useContext(EscomContext);
-  console.log(backend_url);
+
+  const [userData, setUserData] = useState({
+    name: "",
+    email: "",
+    contact: "+91-7845899872",
+    password: "",
+    confirmPassword: "",
+  });
 
   function validateUser() {
-    if (signUp && userData.password !== userData.confirmPassword) {
-      alert(`Hello ${userData.name}, please check your confirm password.`);
+    if (!userData.email || !userData.password) {
+      alert("Email and password are required!");
       return false;
+    }
+
+    if (signUp) {
+      if (!userData.name) {
+        alert("Name is required for signup.");
+        return false;
+      }
+      if (userData.password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return false;
+      }
+      if (userData.password !== userData.confirmPassword) {
+        alert("Passwords do not match.");
+        return false;
+      }
     }
     return true;
   }
 
-  async function userRegister() {
-    try {
-      if (!validateUser()) {
-        return;
-      }
+  async function handleSubmit() {
+    if (!validateUser()) return;
 
-      const response = await fetch(`${backend_url}/api/user/register`, {
+    try {
+      const endpoint = signUp ? "/api/user/register" : "/api/user/login";
+      const response = await fetch(`${backend_url}${endpoint}`, {
         method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData),
       });
 
-      if (!response.ok) {
-        alert('Registration failed. Please try again.');
-        return;
-      }
-
       const jsonResponse = await response.json();
-
       if (!jsonResponse.success) {
         alert(jsonResponse.message);
         return;
       }
-      localStorage.setItem('token', JSON.stringify(jsonResponse.token));
-      localStorage.setItem('user', JSON.stringify(jsonResponse.user));
-      console.log(document.cookie);
-      window.location.href = "/user-profile";
-      setUserData({
-        name: '',
-        email: '',
-        contact: '',
-        password: '',
-        confirmPassword: '',
-      });
 
+      localStorage.setItem("token", JSON.stringify(jsonResponse.token));
+      localStorage.setItem("user", JSON.stringify(jsonResponse.user));
+
+      window.location.reload("/user-profile");
     } catch (error) {
-      alert('An error occurred. Please try again later.');
+      console.error("Error:", error);
+      alert("Something went wrong. Please try again later.");
     }
   }
 
@@ -73,27 +73,46 @@ const LoginSignup = () => {
   return (
     <div className="login-signup">
       <div className="left">
-        <h1>{signUp ? "Already have an account...?" : "Create a new account here...!"}</h1>
+        <h1>{signUp ? "Already have an account?" : "Create a new account!"}</h1>
         <button onClick={() => setSignUp((prev) => !prev)}>
           {signUp ? "Login" : "Sign Up"}
         </button>
       </div>
       <div className="right">
         {signUp && (
-          <input value={userData.name} onChange={(e) => setUserData((prev) => ({ ...prev, name: e.target.value }))} placeholder="Enter your full name" type="text" />
+          <input
+            value={userData.name}
+            onChange={(e) => setUserData((prev) => ({ ...prev, name: e.target.value }))}
+            placeholder="Full name"
+            type="text"
+          />
         )}
-        <input value={userData.email} onChange={(e) => setUserData((prev) => ({ ...prev, email: e.target.value }))} placeholder="Enter your email" type="email" />
-
-        <input value={userData.password} onChange={(e) => setUserData((prev) => ({ ...prev, password: e.target.value }))} placeholder={signUp ? "Create password." : "Enter Password."} type="password" />
+        <input
+          value={userData.email}
+          onChange={(e) => setUserData((prev) => ({ ...prev, email: e.target.value }))}
+          placeholder="Email"
+          type="email"
+        />
+        <input
+          value={userData.password}
+          onChange={(e) => setUserData((prev) => ({ ...prev, password: e.target.value }))}
+          placeholder="Password"
+          type="password"
+        />
         {signUp && (
-          <input value={userData.confirmPassword} onChange={(e) => setUserData((prev) => ({ ...prev, confirmPassword: e.target.value }))} placeholder="Confirm password" type="password" />
+          <input
+            value={userData.confirmPassword}
+            onChange={(e) => setUserData((prev) => ({ ...prev, confirmPassword: e.target.value }))}
+            placeholder="Confirm password"
+            type="password"
+          />
         )}
-        <button onClick={userRegister}>
-          {signUp ? "Sign Up" : "Login"}
-        </button>
-        <div className="links">
-          {!signUp && <Link to="/forgot-password"><span>Forgot password</span></Link>}
-        </div>
+        <button onClick={handleSubmit}>{signUp ? "Sign Up" : "Login"}</button>
+        {!signUp && (
+          <div className="links">
+            <Link to="/forgot-password"><span>Forgot password?</span></Link>
+          </div>
+        )}
       </div>
     </div>
   );

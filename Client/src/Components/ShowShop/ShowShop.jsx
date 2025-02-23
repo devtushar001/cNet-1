@@ -49,32 +49,57 @@ const ShowShop = () => {
         navigate("/place-order");
     };
 
-    const upDateCartOnAdd = async (productId) => {
-        const response = await fetch(`url`, {
-            method: 'POST',
-            headers: {
-                "Content-Type":"application/json",
-                Autherization: `Bearer ${token}`
+    const updateCartOnAdd = async (productId) => {
+        try {
+            const response = await fetch("http://localhost:10017/api/user-cart/add", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`
+                },
+                body: JSON.stringify({ productId })
+            });
+           
+            const data = await response.json();
+            if (!data.success) {
+                toast.error("Cart data not found.");
+            } else {
+                toast.success("Product added to cart!");
             }
-        })
-
-        if (!response.ok) {
-            throw new Error("Something got problem!!!")
+        } catch (error) {
+            console.log(error);
+            toast.error("Failed to update cart. Please try again.");
         }
+    };
 
-        const data = await response.json();
+    const updateCartOnRemove = async (productId) => {
+        try {
+            const response = await fetch("http://localhost:10017/api/user-cart/remove", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`
+                },
+                body: JSON.stringify({ productId })
+            });
 
-        if (!data.ok) {
-             toast.error("Cart data not found.")
+            if (!response.ok) {
+                throw new Error("Something went wrong!");
+            }
+
+            const data = await response.json();
+
+            if (!data.success) {
+                toast.error("Cart data not found.");
+            } else {
+                toast.success("Product removed from cart!");
+            }
+        } catch (error) {
+            console.log(error);
+            toast.error("Failed to update cart. Please try again.");
         }
+    };
 
-        
-            
-    }
-
-    const upDateCartOnRemove = async (productId) => {
-            
-    }
 
     return (
         <div className="show-shop-product">
@@ -98,13 +123,13 @@ const ShowShop = () => {
 
                 <div className="quantity">
                     {cartQuantity > 0 && (
-                        <div onClick={() => removeFromCart(singleProduct._id)}>-</div>
+                        <div onClick={() => { removeFromCart(singleProduct._id), updateCartOnRemove(singleProduct._id) }}>-</div>
                     )}
 
                     <div>{cartQuantity}</div>
 
                     <div
-                        onClick={() => addToCart(singleProduct._id)}
+                        onClick={() => { addToCart(singleProduct._id); updateCartOnAdd(singleProduct._id) }}
                         style={{
                             pointerEvents: isOutOfStock ? "none" : "auto",
                             opacity: isOutOfStock ? 0.2 : 1,
@@ -116,7 +141,7 @@ const ShowShop = () => {
 
                 <div className="buttons">
                     <button
-                        onClick={() => addToCart(singleProduct._id)}
+                        onClick={() => { addToCart(singleProduct._id); updateCartOnAdd(singleProduct._id) }}
                         style={{
                             pointerEvents: isOutOfStock ? "none" : "auto",
                             opacity: isOutOfStock ? 0.2 : 1,
