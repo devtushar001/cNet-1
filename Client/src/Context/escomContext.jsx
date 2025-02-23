@@ -20,6 +20,7 @@ const EscomContextProvider = ({ children }) => {
   const [shopCat, setShopCat] = useState('All');
 
   const getUser = localStorage.getItem('user');
+  const token = localStorage.getItem('token');
 
   const user = JSON.parse(getUser);
 
@@ -78,6 +79,7 @@ const EscomContextProvider = ({ children }) => {
       return;
     }
     setCartData((prevCart) => {
+
       const existingItem = prevCart.find((item) => item.productId === productId);
 
       if (existingItem) {
@@ -147,7 +149,8 @@ const EscomContextProvider = ({ children }) => {
     addToCart,
     removeFromCart,
     cartData,
-    user
+    user,
+    token
   };
 
   return (

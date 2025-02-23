@@ -11,6 +11,7 @@ import razorPayRouter from './Router/razorPayRouter.js';
 import imageRouter from './Router/imageRoutes.js';
 import cloudinarySetup from './Config/cloudinarySetup.js';
 import textEditorRouter from './Router/textEditorRoutes.js';
+import cartRouter from './Router/cartRouter.js';
 
 dotenv.config();
 
@@ -27,13 +28,13 @@ if (!port || !mongo_url) {
 const app = express();
 
 app.use(cors());
-app.use(helmet()); 
+app.use(helmet());
 app.use(express.json());
 app.use(cookieParser());
 
 app.use(rateLimit({
-  windowMs: 15 * 60 * 1000, 
-  max: 100, 
+  windowMs: 15 * 60 * 1000,
+  max: 100,
 }));
 
 
@@ -47,6 +48,7 @@ app.use('/api/crud', crudRouter);
 app.use('/api/razorpay', razorPayRouter);
 app.use('/api/images', imageRouter);
 app.use('/api/text-edit', textEditorRouter);
+app.use('/api/user-cart', cartRouter);
 
 app.get('/', (req, res) => {
   res.status(200).json({

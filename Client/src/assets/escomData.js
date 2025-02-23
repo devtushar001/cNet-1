@@ -430,7 +430,7 @@ export const productData = [
     category: "Single Page Tools",
     brand: "Utility",
     stock: 23,
-    price: "Free",
+    price: 0,
     description: "Generate QR codes instantly with our easy-to-use online tool.",
     createdAt: "2025-02-18T12:00:00Z"
   },
@@ -478,7 +478,7 @@ export const productData = [
     category: "Single Page Tools",
     brand: "Utility",
     stock: 10,
-    price: "Free",
+    price: 0,
     description: "Format and validate JSON data with this simple online tool.",
     createdAt: "2025-02-18T16:00:00Z"
   },

@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 const ShowShop = () => {
     const { shopId } = useParams();
-    const { addToCart, removeFromCart, cartData } = useContext(EscomContext);
+    const { addToCart, removeFromCart, cartData, token } = useContext(EscomContext);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -35,7 +35,6 @@ const ShowShop = () => {
         hour12: true,
     });
 
-    // Get product quantity in cart
     const cartItem = cartData.find((item) => item.productId === singleProduct._id);
     const cartQuantity = cartItem?.quantity || 0;
     const isOutOfStock = cartQuantity >= singleProduct.stock;
@@ -49,6 +48,33 @@ const ShowShop = () => {
         }
         navigate("/place-order");
     };
+
+    const upDateCartOnAdd = async (productId) => {
+        const response = await fetch(`url`, {
+            method: 'POST',
+            headers: {
+                "Content-Type":"application/json",
+                Autherization: `Bearer ${token}`
+            }
+        })
+
+        if (!response.ok) {
+            throw new Error("Something got problem!!!")
+        }
+
+        const data = await response.json();
+
+        if (!data.ok) {
+             toast.error("Cart data not found.")
+        }
+
+        
+            
+    }
+
+    const upDateCartOnRemove = async (productId) => {
+            
+    }
 
     return (
         <div className="show-shop-product">
