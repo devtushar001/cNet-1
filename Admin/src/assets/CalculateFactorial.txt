@@ -1,0 +1,15 @@
+fjkas sakdlfj aklsdjf laksdjf 
+This axcept the data base -------------asjfd  laksdf klsad explanation about the readme file for
+about
+sakdlfj
+
+asdk
+
+
+lksdf
+let fname = 'akshay ',
+lname = 'singh';
+function myName() {
+   console.log(fname + lname)
+}
+myName();
