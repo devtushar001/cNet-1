@@ -1,0 +1,28 @@
+.product-container {
+    margin: 30px 0 0 200px;
+
+}
+
+.product-container .add-category {
+    border: 1px solid rgb(214, 214, 214);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.product-container .add-category .action {
+    width: 100%;
+    display: grid;
+    height: 34px;
+    grid-template-columns: 1fr 120px;
+    gap: 10px;
+}
+
+.product-container .add-category .action input {
+    padding-left: 10px;
+    outline-color: goldenrod;
+}
+
+.product-container .add-category .action button {
+    cursor: pointer;
+}

@@ -8,7 +8,6 @@ const ImageUploader = () => {
   const [images, setImages] = useState([]);
   const { backend_url } = useContext(EscomContext);
 
-  // Fetch images from the backend
   const fetchImages = async () => {
     try {
       const response = await fetch(`${backend_url}/api/images/image`);
@@ -27,7 +26,6 @@ const ImageUploader = () => {
     fetchImages();
   }, []);
 
-  // Handle Image Upload
   const handleUpload = async () => {
     if (!image) return toast.error("Please select an image");
 
@@ -47,13 +45,11 @@ const ImageUploader = () => {
       const data = await response.json();
       toast.success(data.message);
       window.location.reload();
-      // fetchImages();
     } catch (error) {
       toast.error(error.message);
     }
   };
 
-  // Handle Image Delete
   const handleDelete = async (id) => {
     const confirmDelete = window.confirm("Are you sure you want to delete this image?");
     if (!confirmDelete) return;
@@ -72,7 +68,7 @@ const ImageUploader = () => {
       }
 
       toast.success("Image deleted successfully!");
-      fetchImages(); // Refresh images after deletion
+      fetchImages(); 
     } catch (error) {
       console.error("Delete error:", error);
       toast.error("Failed to delete image");

@@ -21,6 +21,7 @@ const cloudName = process.env.CLOUDINARY_CLOUD_NAME;
 const cloudApiKey = process.env.CLOUDINARY_API_KEY;
 const cloudApiSecret = process.env.CLOUDINARY_API_SECRET;
 
+
 if (!port || !mongo_url) {
   throw new Error("Missing required environment variables: PORT or MONGODB_URL");
 }
