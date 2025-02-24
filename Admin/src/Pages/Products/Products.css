@@ -1,21 +1,29 @@
 .product-container {
     margin: 30px 0 0 200px;
-
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .product-container .add-category {
+    width: 95%;
     border: 1px solid rgb(214, 214, 214);
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
+.product-container .add-category .img-box {
+    margin-left: 40px;
+    width: 90%;
+    height: 300px;
+}
+
 .product-container .add-category .action {
-    width: 100%;
+    width: 90%;
     display: grid;
     height: 34px;
     grid-template-columns: 1fr 120px;
     gap: 10px;
+    margin: 30px;
 }
 
 .product-container .add-category .action input {
