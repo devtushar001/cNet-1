@@ -1,0 +1,18 @@
+.sidebar {
+    width: 170px;
+    height: 100vh;
+    padding: 12px 0 12px 12px;
+    display: flex;
+    gap: 12px;
+    border-right: 1px solid salmon;
+    background: rgba(236, 146, 136, 0.185);
+    position: fixed;
+}
+
+.sidebar button {
+    cursor: pointer;
+    padding: 7px 20px;
+    border: 1px solid rgb(216, 216, 216);
+    background: transparent;
+    color: #616161;
+}
