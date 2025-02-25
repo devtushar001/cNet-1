@@ -3,12 +3,10 @@ import "./ImageUploader.css";
 import { toast } from "react-toastify";
 import { TShakyaContext } from "../../Context/TShakyContext";
 
-const ImageUploader = (props) => {
+const ImageUploader = ({ setCatImage }) => {
     const [image, setImage] = useState(null);
     const [images, setImages] = useState([]);
     const { backend_url } = useContext(TShakyaContext);
-
-    const {selection} = props;
 
     const fetchImages = async () => {
         try {
@@ -95,7 +93,7 @@ const ImageUploader = (props) => {
                                 <img src={img.imageUrl} alt="Uploaded" height="250px" />
                                 <div className="buttons">
                                     <button onClick={() => handleDelete(img._id)}>Delete</button>
-                                    <button onClick={() => selection(img.imageUrl)}>Use</button>
+                                    <button onClick={() => setCatImage(img.imageUrl)}>Use</button>
                                 </div>
                             </div>
                         ))}

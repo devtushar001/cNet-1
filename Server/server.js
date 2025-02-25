@@ -12,6 +12,7 @@ import imageRouter from './Router/imageRoutes.js';
 import cloudinarySetup from './Config/cloudinarySetup.js';
 import textEditorRouter from './Router/textEditorRoutes.js';
 import cartRouter from './Router/cartRouter.js';
+import shopCategoryRouter from './Router/shopCategoryRouter.js';
 
 dotenv.config();
 
@@ -50,6 +51,7 @@ app.use('/api/razorpay', razorPayRouter);
 app.use('/api/images', imageRouter);
 app.use('/api/text-edit', textEditorRouter);
 app.use('/api/user-cart', cartRouter);
+app.use('/api/shop-category', shopCategoryRouter);
 
 app.get('/', (req, res) => {
   res.status(200).json({
@@ -58,12 +60,10 @@ app.get('/', (req, res) => {
   });
 });
 
-// Error handling middleware
 app.use((err, req, res, next) => {
   res.status(500).json({ success: false, message: 'Internal Server Error' });
 });
 
-// Start server
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });

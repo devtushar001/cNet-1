@@ -19,19 +19,6 @@
     height: 300px;
 }
 
-.product-container .add-category .img-box button {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 65px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    background: #04467c48;
-    backdrop-filter: blur(5px);
-    color: #fff;
-}
-
 .product-container .add-category .action {
     width: 90%;
     display: grid;

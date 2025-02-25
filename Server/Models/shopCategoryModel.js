@@ -10,7 +10,7 @@ const shopCategorySchema = new mongoose.Schema({
         type: String,
         required: true
     }
-}, { timestamps: true }); 
+}, { timestamps: true });
 
 const shopCategoryModel = mongoose.models.shopCategory || mongoose.model("shopCategory", shopCategorySchema);
 export default shopCategoryModel;
