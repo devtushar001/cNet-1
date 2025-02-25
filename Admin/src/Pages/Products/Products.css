@@ -1,6 +1,6 @@
 .product-container {
     margin: 30px 0 0 200px;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .product-container .add-category {
@@ -14,7 +14,22 @@
 .product-container .add-category .img-box {
     margin-left: 40px;
     width: 90%;
+    position: relative;
+    z-index: -1;
     height: 300px;
+}
+
+.product-container .add-category .img-box button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 65px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: #04467c48;
+    backdrop-filter: blur(5px);
+    color: #fff;
 }
 
 .product-container .add-category .action {
