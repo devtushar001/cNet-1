@@ -3,10 +3,10 @@ import "./ImageUploader.css";
 import { toast } from "react-toastify";
 import { TShakyaContext } from "../../Context/TShakyContext";
 
-const ImageUploader = ({ setCatImage }) => {
+const ImageUploader = () => {
     const [image, setImage] = useState(null);
     const [images, setImages] = useState([]);
-    const { backend_url } = useContext(TShakyaContext);
+    const { backend_url, imageSelector, setImageSelector, addMultiple, setAddMultiple, setSingle, SetAddsingle } = useContext(TShakyaContext);
 
     const fetchImages = async () => {
         try {
@@ -45,7 +45,7 @@ const ImageUploader = ({ setCatImage }) => {
 
             const data = await response.json();
             toast.success(data.message);
-            window.location.reload();
+            fetchImages();
         } catch (error) {
             toast.error(error.message);
         }
@@ -78,6 +78,7 @@ const ImageUploader = ({ setCatImage }) => {
 
     return (
         <div className="image-uploader">
+            <button onClick={() => {setImageSelector(false); setSingle(false);}}> Close</button>
             <div className="inputs">
                 <input type="file" onChange={(e) => setImage(e.target.files[0])} />
                 <button onClick={handleUpload}>Upload</button>
@@ -93,7 +94,7 @@ const ImageUploader = ({ setCatImage }) => {
                                 <img src={img.imageUrl} alt="Uploaded" height="250px" />
                                 <div className="buttons">
                                     <button onClick={() => handleDelete(img._id)}>Delete</button>
-                                    <button onClick={() => setCatImage(img.imageUrl)}>Use</button>
+                                    {imageSelector ? <button onClick={() => setAddMultiple([...addMultiple, img.imageUrl])}>Use</button> : <button onClick={() => SetAddsingle(img.imageUrl)}>Use</button>}
                                 </div>
                             </div>
                         ))}

@@ -1,17 +1,21 @@
 import React, { useContext, useEffect, useState } from "react";
-import ImageUploader from "../../Components/ImageUploader/ImageUploader";
 import "./Products.css";
 import { toast } from "react-toastify";
 import { TShakyaContext } from "../../Context/TShakyContext";
+import TextEditor from "../../Components/TextEditor/TextEditor";
 
 const Products = () => {
     const [catImage, setCatImage] = useState(null);
     const { backend_url } = useContext(TShakyaContext);
     const [fetchData, setFetchData] = useState([]);
+    const [categorySet, setCategorySet] = useState(false)
     const [shopCategory, setShopCategory] = useState({
         shopCategoryName: "",
         shopCategoryImage: null,
     });
+    const [gallery, setGallery] = useState([]);
+    const { imageSelector, setImageSelector, addMultiple, addSingle, setSingle } = useContext(TShakyaContext);
+
 
     useEffect(() => {
         setShopCategory(prev => ({ ...prev, shopCategoryImage: catImage }));
@@ -110,47 +114,47 @@ const Products = () => {
     }, [fetchData]);
 
     return (
-        <div className="product-container">
-            <div className="add-category">
-                <h2 style={{ marginLeft: "30px", padding: "10px", borderBottom: "1px solid gray" }}>
-                    Add Category
-                </h2>
-
-                {shopCategory.shopCategoryImage && (
-                    <div className="img-box">
-                        <img
-                            style={{ height: "270px" }}
-                            src={shopCategory.shopCategoryImage}
-                            alt="Selected category"
-                        />
-                        <button onClick={() => {
-                            setShopCategory(prev => ({ ...prev, shopCategoryImage: null }));
-                            setCatImage(null);
-                        }}>Remove</button>
+        <>
+            <div className="product-container">
+                <div className="add-product">
+                    <h2>Add Product</h2>
+                    <hr />
+                    <div className="category">
+                        <button className="submit">Submit</button>
                     </div>
-                )}
-
-                <div className="action">
-                    <input
-                        type="text"
-                        placeholder="Enter shop category name"
-                        value={shopCategory.shopCategoryName}
-                        onChange={(e) =>
-                            setShopCategory(prev => ({ ...prev, shopCategoryName: e.target.value }))
+                    <div className="gallery-image">
+                        <button onClick={() => setImageSelector(true)}>Add Gallery</button>
+                        {addMultiple.map((item, i) => {
+                            return (
+                                <img style={{ height: "220px" }} key={i} src={item} alt="" />
+                            )
                         }
-                    />
-                    <button type="submit" onClick={createShopCategory}>Submit</button>
+                        )}
+                    </div>
+                    <div className="gallery-image">
+                        <button onClick={() => setSingle(true)}>Add Featured Image</button>
+                        <img style={{ width: "100%" }} src={addSingle} alt="" />
+                    </div>
+                    <div className="category">
+                        <select name="shopCategory" id="shopCategory">
+                            <option value="Select Category">Select a ctegory</option>
+                            {fetchData.map((item, i) => {
+                                return (
+                                    <option>{item.shopCategoryName}</option>
+                                )
+                            })}
+                        </select>
+                        <input type="text" placeholder="Brand"/>
+                        <input type="text" placeholder="Brand"/>
+                        <input type="text" placeholder="Brand"/>
+                        <input type="text" placeholder="Brand"/>
+                    </div>
+                    <input className="title" type="text" placeholder="Enter product title" />
+                    <TextEditor />
                 </div>
-            </div>
-            <br />
-            <hr />
-            <br />
 
-            <div className="add-product">
             </div>
-
-            <ImageUploader setCatImage={setCatImage} />
-        </div>
+        </>
     );
 };
 
