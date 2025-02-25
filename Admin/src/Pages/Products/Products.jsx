@@ -147,9 +147,6 @@ const Products = () => {
             <br />
 
             <div className="add-product">
-                <h2 style={{ marginLeft: "30px", padding: "10px", borderBottom: "1px solid gray" }}>
-                    Add Product
-                </h2>
             </div>
 
             <ImageUploader setCatImage={setCatImage} />
