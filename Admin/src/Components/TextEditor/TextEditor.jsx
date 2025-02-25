@@ -1,20 +1,15 @@
-import React, { useState, useRef, useMemo, useEffect } from 'react';
+import React, { useRef, useMemo, useContext } from 'react';
 import JoditEditor from 'jodit-react';
+import { TShakyaContext } from '../../Context/TShakyContext';
 
 const TextEditor = ({ placeholder }) => {
     const editor = useRef(null);
-    const [content, setContent] = useState('');
-
-    useEffect(() => {
-        console.log(content);
-    },[]);
+    const { content, setContent } = useContext(TShakyaContext);
 
     const config = useMemo(() => ({
         readonly: false,
-        placeholder: placeholder || 'Start typings...'
-    }),
-        [placeholder]
-    );
+        placeholder: placeholder || 'Start typing...',
+    }), [placeholder]);
 
     return (
         <JoditEditor
@@ -22,8 +17,12 @@ const TextEditor = ({ placeholder }) => {
             value={content}
             config={config}
             tabIndex={1}
-            onBlur={newContent => setContent(newContent)}
-            onChange={newContent => { }}
+            onBlur={(newContent) => {
+                setContent && setContent(newContent);
+            }}
+            onChange={(newContent) => {
+                setContent && setContent(newContent);
+            }}
         />
     );
 };

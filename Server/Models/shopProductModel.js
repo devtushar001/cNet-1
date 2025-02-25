@@ -15,6 +15,7 @@ const shopProductSchema = new mongoose.Schema({
     stock: { type: Number, required: true },
     price: { type: Number, required: true, default: 299.99 },
     description: { type: String, required: true },
+    content: { type: String, required: true }
 }, { timestamps: true });
 
 const shopProductModel = mongoose.models.shopProduct || mongoose.model("shopProduct", shopProductSchema);

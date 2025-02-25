@@ -7,6 +7,7 @@ const TShakyaContextProvider = ({ children }) => {
     const [addSingle, SetAddsingle] = useState(null);
     const [addMultiple, setAddMultiple] = useState([]);
     const [imageSelector, setImageSelector] = useState(false);
+    const [content, setContent] = useState('');
     const [single, setSingle] = useState(false);
     const backend_url = "http://localhost:10017";
 
@@ -21,7 +22,9 @@ const TShakyaContextProvider = ({ children }) => {
         imageSelector,
         setImageSelector,
         single,
-        setSingle
+        setSingle,
+        content,
+        setContent
     };
 
     return (
