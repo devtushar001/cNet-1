@@ -63,15 +63,19 @@ const Products = () => {
 
     const createNewProduct = async () => {
         try {
-            const response = await fetch(`${backend_url}/api/products/add`, {
+            const response = await fetch(`${backend_url}/api/shop-products/add`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ ...data, content, featuredImg: addSingle, galleryImg: addMultiple })
+                body: JSON.stringify({ ...data, content, featuredImg: addSingle, galleryImg: [...addMultiple] })
             });
 
+
+            console.log(response);
             const result = await response.json();
+
+            alert(result.message);
 
             if (!result.success) {
                 toast.error(result.message);
@@ -80,7 +84,6 @@ const Products = () => {
 
             toast.success("Product added successfully");
         } catch (error) {
-            console.error(error);
             toast.error("Error adding product");
         }
     };

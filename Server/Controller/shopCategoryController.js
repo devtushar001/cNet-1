@@ -49,8 +49,6 @@ export const getShopCategoryController = async (req, res) => {
             });
         }
 
-        console.log(shopCategories);
-
         return res.status(200).json({
             success: true,
             message: "All categories fetched",

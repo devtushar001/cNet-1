@@ -52,6 +52,7 @@ app.use('/api/images', imageRouter);
 app.use('/api/text-edit', textEditorRouter);
 app.use('/api/user-cart', cartRouter);
 app.use('/api/shop-category', shopCategoryRouter);
+app.use('/api/shop-products', shopCategoryRouter);
 
 app.get('/', (req, res) => {
   res.status(200).json({
