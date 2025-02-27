@@ -8,8 +8,17 @@ import TextEditor from "../../Components/TextEditor/TextEditor";
 const Products = () => {
     const { backend_url, setSingleImageSelector, singleImageSelector } = useContext(TShakyaContext);
     const [fetchData, setFetchData] = useState([]);
-    const [categoryImage, setCategoryImage] = useState(null);
-    const [featuredImage, setFeaturedImage] = useState(null);
+
+    const [categoryImage, setCategoryImage] = useState({
+        selection: false,
+        image: null
+    });
+
+    const [featuredImage, setFeaturedImage] = useState({
+        selection: false,
+        image: null
+    });
+
     const [shopCategory, setShopCategory] = useState({
         shopCategoryName: "",
         shopCategoryImage: null,
@@ -17,17 +26,7 @@ const Products = () => {
 
     const fetchShopCategory = async () => {
         try {
-            const response = await fetch(`${backend_url}/api/shop-category/get-all`, {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            });
-
-            if (!response.ok) {
-                throw new Error("Something went wrong");
-            }
-
+            const response = await fetch(`${backend_url}/api/shop-category/get-all`);
             const result = await response.json();
 
             if (!result.success) {
@@ -37,7 +36,7 @@ const Products = () => {
 
             setFetchData(result.shopCategories);
         } catch (error) {
-            toast.error(error.message);
+            toast.error("Error fetching categories");
         }
     };
 
@@ -51,7 +50,7 @@ const Products = () => {
             return;
         }
 
-        if (!categoryImage) {
+        if (!categoryImage.image) {
             toast.error("Please upload an image");
             return;
         }
@@ -59,18 +58,12 @@ const Products = () => {
         try {
             const response = await fetch(`${backend_url}/api/shop-category/create`, {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     shopCategoryName: shopCategory.shopCategoryName,
-                    shopCategoryImage: categoryImage,
+                    shopCategoryImage: categoryImage.image,
                 }),
             });
-
-            if (!response.ok) {
-                throw new Error("Something went wrong");
-            }
 
             const data = await response.json();
 
@@ -81,10 +74,10 @@ const Products = () => {
 
             toast.success(data.message);
             setShopCategory({ shopCategoryName: "", shopCategoryImage: null });
-            setCategoryImage("");
+            setCategoryImage({ selection: false, image: null });
             fetchShopCategory();
         } catch (error) {
-            toast.error(error.message);
+            toast.error("Failed to create category");
         }
     };
 
@@ -100,16 +93,17 @@ const Products = () => {
                         ))}
                     </select>
                 </div>
+
                 <div className="create-new-category">
                     <h2>Create new category</h2>
                     <div className="image">
-                        {categoryImage ? (
+                        {categoryImage.image ? (
                             <>
-                                <img src={categoryImage} alt="Category" />
-                                <button onClick={() => setCategoryImage('')}>Remove</button>
+                                <img src={categoryImage.image} alt="Category" />
+                                <button onClick={() => setCategoryImage({ selection: false, image: null })}>Remove</button>
                             </>
                         ) : (
-                            <input type="submit" value="Select image" onClick={() => setSingleImageSelector(true)} />
+                            <input type="submit" value="Select image" onClick={() => setCategoryImage((prev) => ({ ...prev, selection: true }))} />
                         )}
                     </div>
                     <div className="category-data">
@@ -123,17 +117,21 @@ const Products = () => {
                     </div>
                 </div>
             </div>
+
             <hr />
-            {singleImageSelector && <ImageUploader imageSelector={setCategoryImage} />}
+
+            {categoryImage.selection && <ImageUploader object={categoryImage} imageSelector={setCategoryImage} />}
+
             <div className="product-content">
                 <div className="fetuered-image">
-                    <img src={featuredImage} alt="" />
-                    <button onClick={() => setSingleImageSelector(true)}>Select featured image</button>
+                    {featuredImage.image && <img src={featuredImage.image} alt="Featured" />}
+                    <button onClick={() => setFeaturedImage((prev) => ({ ...prev, selection: true }))}>Select featured image</button>
                 </div>
                 <input type="text" placeholder="Enter product title" />
-                {singleImageSelector && <ImageUploader imageSelector={setFeaturedImage} />}
+                {featuredImage.selection && <ImageUploader imageSelector={(image) => setFeaturedImage({ selection: false, image })} />}
                 <TextEditor />
             </div>
+
             <hr />
         </div>
     );

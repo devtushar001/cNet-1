@@ -3,10 +3,10 @@ import "./ImageUploader.css";
 import { toast } from "react-toastify";
 import { TShakyaContext } from "../../Context/TShakyContext";
 
-const ImageUploader = ({ imageSelector }) => {
+const ImageUploader = ({ object, imageSelector }) => {
     const [image, setImage] = useState(null);
     const [images, setImages] = useState([]);
-    const { backend_url, singleImageSelector, setSingleImageSelector } = useContext(TShakyaContext);
+    const { backend_url } = useContext(TShakyaContext);
 
     const fetchImages = async () => {
         try {
@@ -94,7 +94,7 @@ const ImageUploader = ({ imageSelector }) => {
                                 <img src={img.imageUrl} alt="Uploaded" height="250px" />
                                 <div className="buttons">
                                     <button onClick={() => handleDelete(img._id)}>Delete</button>
-                                    {singleImageSelector ? <button onClick={() =>{ imageSelector(img.imageUrl), setSingleImageSelector(false)}}>Use</button> : null}
+                                    {object.selection ? <button onClick={() => { imageSelector((prev) => ({ ...prev, image: img.imageUrl })), imageSelector((prev) => ({ ...prev, selection: false })) }}>Use</button> : null}
                                 </div>
                             </div>
                         ))}
