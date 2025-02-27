@@ -1,5 +1,7 @@
 .image-uploader {
+  width: 77vw;
   margin-top: 12px;
+  margin-bottom: 12px;
   position: absolute;
   background: #00000017;
   backdrop-filter: blur(5px);

@@ -7,6 +7,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    margin-bottom: 20px;
 }
 
 .add-product .category-contianer .add-category {
@@ -19,9 +20,9 @@
 
 .add-product .category-contianer .create-new-category .image {
     width: auto;
-    border: 1px solid rgb(175, 175, 175);
     height: 220px;
     margin-bottom: 12px;
+    border: 1px solid rgb(175, 175, 175);
 }
 
 .add-product .category-contianer .create-new-category .image img {
@@ -31,8 +32,8 @@
 .add-product .category-contianer .create-new-category .category-data {
     display: grid;
     grid-template-columns: 1fr 85px;
-    height: 35px;
     gap: 10px;
+    height: 35px;
 }
 
 .add-product .category-contianer .create-new-category .category-data input {

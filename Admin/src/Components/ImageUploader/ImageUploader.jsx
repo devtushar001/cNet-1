@@ -94,7 +94,7 @@ const ImageUploader = ({ imageSelector }) => {
                                 <img src={img.imageUrl} alt="Uploaded" height="250px" />
                                 <div className="buttons">
                                     <button onClick={() => handleDelete(img._id)}>Delete</button>
-                                    {singleImageSelector ? <button onClick={() => imageSelector(img.imageUrl)}>Use</button> : null}
+                                    {singleImageSelector ? <button onClick={() =>{ imageSelector(img.imageUrl), setSingleImageSelector(false)}}>Use</button> : null}
                                 </div>
                             </div>
                         ))}
