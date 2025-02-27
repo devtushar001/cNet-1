@@ -3,10 +3,10 @@ import "./ImageUploader.css";
 import { toast } from "react-toastify";
 import { TShakyaContext } from "../../Context/TShakyContext";
 
-const ImageUploader = () => {
+const ImageUploader = ({ imageSelector }) => {
     const [image, setImage] = useState(null);
     const [images, setImages] = useState([]);
-    const { backend_url, imageSelector, setImageSelector, addMultiple, setAddMultiple, setSingle, SetAddsingle } = useContext(TShakyaContext);
+    const { backend_url, singleImageSelector, setSingleImageSelector } = useContext(TShakyaContext);
 
     const fetchImages = async () => {
         try {
@@ -15,7 +15,6 @@ const ImageUploader = () => {
                 throw new Error("Failed to fetch images");
             }
             const data = await response.json();
-            console.log(data);
             setImages(data);
         } catch (error) {
             console.error("Error fetching images:", error);
@@ -45,6 +44,7 @@ const ImageUploader = () => {
 
             const data = await response.json();
             toast.success(data.message);
+            setImage(null);
             fetchImages();
         } catch (error) {
             toast.error(error.message);
@@ -59,9 +59,9 @@ const ImageUploader = () => {
             const response = await fetch(`${backend_url}/api/images/delete`, {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ id })
+                body: JSON.stringify({ id }),
             });
 
             if (!response.ok) {
@@ -78,7 +78,7 @@ const ImageUploader = () => {
 
     return (
         <div className="image-uploader">
-            <button onClick={() => {setImageSelector(false); setSingle(false);}}> Close</button>
+            <button onClick={() => setSingleImageSelector(false)}>Close</button>
             <div className="inputs">
                 <input type="file" onChange={(e) => setImage(e.target.files[0])} />
                 <button onClick={handleUpload}>Upload</button>
@@ -94,7 +94,7 @@ const ImageUploader = () => {
                                 <img src={img.imageUrl} alt="Uploaded" height="250px" />
                                 <div className="buttons">
                                     <button onClick={() => handleDelete(img._id)}>Delete</button>
-                                    {imageSelector ? <button onClick={() => setAddMultiple([...addMultiple, img.imageUrl])}>Use</button> : <button onClick={() => SetAddsingle(img.imageUrl)}>Use</button>}
+                                    {singleImageSelector ? <button onClick={() => imageSelector(img.imageUrl)}>Use</button> : null}
                                 </div>
                             </div>
                         ))}

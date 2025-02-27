@@ -2,11 +2,16 @@ import React, { useContext, useEffect, useState } from "react";
 import "./Products.css";
 import { toast } from "react-toastify";
 import { TShakyaContext } from "../../Context/TShakyContext";
-import TextEditor from "../../Components/TextEditor/TextEditor";
+import ImageUploader from "../../Components/ImageUploader/ImageUploader";
 
 const Products = () => {
-    const { backend_url } = useContext(TShakyaContext);
+    const { backend_url, setSingleImageSelector, singleImageSelector } = useContext(TShakyaContext);
     const [fetchData, setFetchData] = useState([]);
+    const [categoryImage, setCategoryImage] = useState('');
+
+    useEffect(() => {
+        console.log(categoryImage);
+    },[])
 
     const fetchShopCategory = async () => {
         try {
@@ -41,10 +46,39 @@ const Products = () => {
 
     return (
         <>
-        <div className="add-product">
+            <div className="add-product">
+                <div className="category-contianer">
+                    <div className="add-category">
+                        <h2>Select a category</h2>
+                        <select name="category" id="category">
+                            <option value="Select a category">Select a category</option>
+                            {fetchData.map((ite, i) => {
+                                return (
+                                   <option>{ite.shopCategoryName}</option>
+                                )
+                            })}
+                            <option value="Select a category">Select a category</option>
+                            <option value="Select a category">Select a category</option>
+                            <option value="Select a category">Select a category</option>
+                            <option value="Select a category">Select a category</option>
+                        </select>
+                    </div>
+                    <div className="create-new-category">
+                        <h2>Create new category.</h2>
+                        <div className="image" onClick={() => { setSingleImageSelector(true) }}>
+                            <img src={categoryImage} alt="Category image" />
+                            <input type="submit" value="Select image" />
+                        </div>
+                        <div className="category-data">
+                            <input type="text" />
+                            <button>Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                {singleImageSelector ? <ImageUploader imageSelector={setCategoryImage} /> : ""}
 
-            product page
-        </div>
+            </div>
         </>
     );
 };
